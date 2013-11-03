@@ -1,6 +1,6 @@
 #!/bin/bash
 
 echo "crawl"
-python crawler.py
+python crawler.py coopist
 echo "render"
-python render.py
+python render.py coopist

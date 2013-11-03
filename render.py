@@ -2,25 +2,39 @@ import jinja2
 import json
 from db_mongo import *
 from collections import Counter
+from os import path
+import sys
 
-dir_twitter = '/var/www/coopist/'
-fn_template = dir_twitter + 'index.tpl.html'
-fn_output = dir_twitter + 'index.html'
 
-template = jinja2.Template(open(fn_template).read())
-recent = status_list.find().sort('time', -1)[:10]
-#recent = status_list.find().sort()
-photos = dict([(s['user']['profile_image_url'], s['user']['screen_name']) for s in status_list.find()])
-wall = photos.items()[:100]
-#print wall
-_tags = []
-for s in status_list.find():
-    _tags.extend(s['text'].split())
-l = len(_tags)
-c = Counter(_tags)
-tag = json.dumps([[k, float(v) / l] for (k,v) in c.iteritems()])
-result = template.render(recent=recent, wall=wall, tag=tag)
-open(fn_output, 'w').write(result)
+def render_one(project):
+    dir_root = '/var/www/'
+    dir_project = path.join(dir_root, project)
+    fn_template = path.join(dir_root, 'project.tpl.html')
+    fn_output = path.join(dir_project, 'index.html')
+
+    status_list = mongo_client[project].status_list
+    template = jinja2.Template(open(fn_template).read())
+    recent = status_list.find().sort('time', -1)[:10]
+    #recent = status_list.find().sort()
+    photos = dict([(s['user']['profile_image_url'], s['user']['screen_name']) for s in status_list.find()])
+    wall = photos.items()[:100]
+    #print wall
+    _tags = []
+    for s in status_list.find():
+        _tags.extend(s['text'].split())
+    l = len(_tags)
+    c = Counter(_tags)
+    tag = json.dumps([[k, float(v) / l] for (k,v) in c.iteritems()])
+    description = open(path.join(project, 'description'))
+    result = template.render(recent=recent, wall=wall, tag=tag, description=description)
+    open(fn_output, 'w').write(result)
+
+if __name__ == "__main__":
+    if len(sys.argv) == 2:
+        project = sys.argv[1]
+        render_one(project)
+    else:
+        print "usage: %s project" % sys.argv[0]
 
 '''
 > db.status_list.findOne()
