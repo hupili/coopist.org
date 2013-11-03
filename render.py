@@ -14,7 +14,15 @@ def render_one(project):
 
     status_list = mongo_client[project].status_list
     template = jinja2.Template(open(fn_template).read())
-    recent = status_list.find().sort('time', -1)[:10]
+    recent = []
+    for s in status_list.find().sort('time', -1)[:10]:
+        if 'urls' in s:
+            for u in s['urls']:
+                s['text'] = s['text'].replace(u[0], 
+                        '<a href="%s"> %s </a>' % (u[1], u[0]))
+        recent.append(s)
+   
+
     #recent = status_list.find().sort()
     photos = dict([(s['user']['profile_image_url'], s['user']['screen_name']) for s in status_list.find()])
     wall = photos.items()[:100]
@@ -25,7 +33,7 @@ def render_one(project):
     l = len(_tags)
     c = Counter(_tags)
     tag = json.dumps([[k, float(v) / l] for (k,v) in c.iteritems()])
-    description = open(path.join(project, 'description'))
+    description = open(path.join(project, 'description')).read()
     result = template.render(recent=recent, wall=wall, tag=tag, description=description)
     open(fn_output, 'w').write(result)
 
