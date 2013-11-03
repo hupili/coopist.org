@@ -34,7 +34,8 @@ def render_one(project):
     c = Counter(_tags)
     tag = json.dumps([[k, float(v) / l] for (k,v) in c.iteritems()])
     description = open(path.join(project, 'description')).read()
-    result = template.render(recent=recent, wall=wall, tag=tag, description=description)
+    title = open(path.join(project, 'title')).read()
+    result = template.render(recent=recent, wall=wall, tag=tag, description=description, title=title)
     open(fn_output, 'w').write(result)
 
 if __name__ == "__main__":
