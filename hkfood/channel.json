@@ -1,0 +1,14 @@
+[
+  {
+    "term": "coopist_hkfood",
+    "channel_name": "search",
+    "platform": "TwitterSearch",
+    "text_length_limit": 140,
+    "include_entities": true,
+    "access_key": "205640689-tnV0Jwyp4I2qi44moSHktrsjsWWvTsTd9xbmcHAh",
+    "app_secret": "viAZ2GzoLhvNmzP69Vz9GMPptBcQ0dCSFp9OoYzYI",
+    "app_key": "JS0emJBQ03xKGZ50c8nKpg",
+    "access_secret": "dBDUg6aJq5VB2fThXONyThyUDfDv7IXgVi6XulOJsrlzj",
+    "open": "yes"
+  }
+]
