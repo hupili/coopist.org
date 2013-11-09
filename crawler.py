@@ -7,6 +7,10 @@ import snsapi
 from snsapi.snspocket import SNSPocket
 from db_mongo import *
 
+def clear_urls(r):
+    if 'urls' in r:
+        r['urls'] = [[k, v] for (k, v) in r['urls'].items()]
+
 def crawl_one(tag):
     sp = SNSPocket()
     sp.load_config(fn_channel=tag+'/channel.json')
@@ -17,8 +21,9 @@ def crawl_one(tag):
         try:
             r = s.raw
             #print r
-            if 'urls' in r:
-                r.urls = [[k, v] for (k, v) in r['urls'].items()]
+            clear_urls(r)
+            if 'retweeted_status' in r:
+                clear_urls(r['retweeted_status'])
             r['_id'] = r['id']
             r['time'] = s.parsed['time']
             ret = status_list.insert(r)

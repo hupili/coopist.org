@@ -4,11 +4,12 @@ from db_mongo import *
 from collections import Counter
 from os import path
 import sys
-
+import sh
 
 def render_one(project):
     dir_root = '/var/www/'
     dir_project = path.join(dir_root, project)
+    sh.mkdir('-p', dir_project)
     fn_template = path.join(dir_root, 'project.tpl.html')
     fn_output = path.join(dir_project, 'index.html')
 
@@ -32,11 +33,16 @@ def render_one(project):
         _tags.extend(s['text'].split())
     l = len(_tags)
     c = Counter(_tags)
-    tag = json.dumps([[k, float(v) / l] for (k,v) in c.iteritems()])
+    #[[k, float(v) / l] for (k,v) in c.iteritems()]
+    keys = sorted(c.keys(), key=lambda k: c[k], reverse=True)[0:20]
+    tc = []
+    for i in keys:
+        tc.append([i, 'http://coopist.org', c[i]])
+    tag = json.dumps(tc)
     description = open(path.join(project, 'description')).read()
     title = open(path.join(project, 'title')).read()
     result = template.render(recent=recent, wall=wall, tag=tag, description=description, title=title)
-    open(fn_output, 'w').write(result)
+    open(fn_output, 'w').write(result.encode('utf-8'))
 
 if __name__ == "__main__":
     if len(sys.argv) == 2:
