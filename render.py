@@ -12,6 +12,13 @@ def render_one(project):
     sh.mkdir('-p', dir_project)
     fn_template = path.join(dir_root, 'project.tpl.html')
     fn_output = path.join(dir_project, 'index.html')
+    fn_channel_json = path.join(project, 'channel.json')
+
+    _hash_tags = []
+    for c in json.load(open(fn_channel_json)):
+        _hash_tags.append(u'#' + c['term'])
+    hash_tag = ' '.join(map(lambda h: '<code>%s</code>' % h, _hash_tags))
+
 
     status_list = mongo_client[project].status_list
     template = jinja2.Template(open(fn_template).read())
@@ -41,7 +48,7 @@ def render_one(project):
     tag = json.dumps(tc)
     description = open(path.join(project, 'description')).read()
     title = open(path.join(project, 'title')).read()
-    result = template.render(recent=recent, wall=wall, tag=tag, description=description, title=title)
+    result = template.render(recent=recent, wall=wall, tag=tag, description=description, title=title, hash_tag=hash_tag)
     open(fn_output, 'w').write(result.encode('utf-8'))
 
 if __name__ == "__main__":
