@@ -1,0 +1,220 @@
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>coopist</title>
+	<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="../bootstrap/css/bootstrap-responsive.css"/>
+	<link rel="stylesheet" href="../css/home.css"/>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../bootstrap/js/bootstrap-dropdown.js"></script>
+    <script type="text/javascript" src="http://www.google.com/jsapi">
+    </script>
+
+	<script type="text/javascript" src="http://word-cumulus-goog-vis.googlecode.com/svn/trunk/wordcumulus.js">
+	</script>
+
+	<script type="text/javascript" src="http://word-cumulus-goog-vis.googlecode.com/svn/trunk/swfobject.js">
+	</script>
+
+	<script type="text/javascript">
+		// JS snippets adapted from:
+		//    * https://github.com/ptwobrussell/Mining-the-Social-Web
+		//$( document ).ready(function() {
+	google.load("visualization", "1");
+
+	// Set callback to run when API is loaded
+	google.setOnLoadCallback(drawVisualization);
+
+	// Called when the Visualization API is loaded.
+	function drawVisualization() {
+
+		// Create and populate a data table.
+		var data = new google.visualization.DataTable();
+		data.addColumn('string', 'Tag');
+		data.addColumn('string', 'URL');
+		data.addColumn('number', 'Font size');
+
+		//Define an array of 3-part tuples below
+		//We're substituting them in via Python so there's a placeholder
+		var json_data = [["#coopist_hkfood", "http://coopist.org", 4], ["some", "http://coopist.org", 2], ["HK", "http://coopist.org", 2], ["Support", "http://coopist.org", 2], ["food", "http://coopist.org", 2], ["#swhk", "http://coopist.org", 2], ["#coopist", "http://coopist.org", 2], ["project", "http://coopist.org", 2], ["formed!", "http://coopist.org", 1], ["idled", "http://coopist.org", 1], ["is", "http://coopist.org", 1], ["it", "http://coopist.org", 1], ["say", "http://coopist.org", 1], ["concept", "http://coopist.org", 1], ["group", "http://coopist.org", 1], ["for", "http://coopist.org", 1], ["prove", "http://coopist.org", 1], ["Here", "http://coopist.org", 1], ["should", "http://coopist.org", 1], ["to", "http://coopist.org", 1]];
+
+		data.addRows(json_data.length);
+		for (var i = 0; i < json_data.length; i++) {
+			data.setCell(i, 0, json_data[i][0]); // Tag
+			data.setCell(i, 1, json_data[i][1]); // URL for tag
+			data.setCell(i, 2, 2+2.5*json_data[i][2]); // Font size for tag
+		}
+
+		// Instantiate our table object.
+		var vis = new gviz_word_cumulus.WordCumulus(document.getElementById('tagcloud'));
+
+		// Draw our table with the data we created locally.
+		vis.draw(data, {text_color: '#00ff00', speed: 50, width:600, height:600});
+	}
+		//});
+	</script>
+</head>
+
+<body>
+	<div class="container">
+		<div class="row-fluid">
+			<div class="span12">
+				<h1>
+					HK Food
+<br />
+<small>
+Can not endure the large gap between retail price and wholesale price in your local super market?
+</small>
+
+                </h1>
+			</div>
+		</div>
+		<div class="row-fluid">
+			<div class="span12">
+				<ul class="nav nav-tabs mynav">
+					<li><a href="#about">About</a></li>
+					<li><a class="active" href="#recent">Recent Messages</a></li>
+					<li><a href="#wall">Supporters</a></li>
+					<li><a href="#tag">Concerns</a></li>
+					<li><a href="http://coopist.org"> Homepage|-> </a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="row-fluid" id="about">
+			<div class="span12">
+				<h2>About This Project</h2>
+				<img width=300 height=300 src="https://docs.google.com/drawings/d/1A2nQQgby_BBWP2AOBuONBEzreiWsGo2T9tOGDldvqAM/pub?w=487&h=487" />
+
+
+<p>
+Do you notice that there is a big gap between retail price and wholesale price?
+Consumers coming into the shops alone do not get a good deal.
+Why not form a consumer-Co-Op?
+Why not buy one, instead of two, directly to get better price?
+</p>
+
+<p>
+Sounds similar?
+Like
+<a href="http://cyber.law.harvard.edu/projectvrm/Main_Page">
+Vendor Relationship Management
+</a>?
+Crowd ownership (we just created at #SWHK to differentiate from crowd funding)?
+</p>
+
+
+			</div>
+		</div>
+
+		<div class="row-fluid" id="recent">
+			<div class="span12">
+				<h2>Recent messages</h2>
+				Recent tweets from coopists:
+				
+				<div class="row-fluid">
+					<div class="span1">
+						<a href="http://twitter.com/hupili">
+							<img src="https://pbs.twimg.com/profile_images/378800000283621712/a5b897c6161ddaea540276d94e0842d4_normal.jpeg"/>
+						</a>
+					</div>
+					<div>
+						<a href="http://twitter.com/hupili">
+						@hupili
+						</a>
+						<small> Sun Nov 17 09:10:33 +0000 2013 </small>
+						<br />
+						#coopist_hkfood idled for some time. Should we organise some reverse group buying to prove a concept first?
+					</div>
+				</div>
+				
+				<div class="row-fluid">
+					<div class="span1">
+						<a href="http://twitter.com/ronaldkwokky">
+							<img src="https://pbs.twimg.com/profile_images/378800000686278992/1b85f88e8f2dc76749f016d781aab86c_normal.jpeg"/>
+						</a>
+					</div>
+					<div>
+						<a href="http://twitter.com/ronaldkwokky">
+						@ronaldkwokky
+						</a>
+						<small> Sun Nov 03 08:04:43 +0000 2013 </small>
+						<br />
+						Support #swhk #coopist HK food project #coopist_hkfood
+					</div>
+				</div>
+				
+				<div class="row-fluid">
+					<div class="span1">
+						<a href="http://twitter.com/boscokakinlam">
+							<img src="https://pbs.twimg.com/profile_images/3572495263/18aa80fd8d88f3e85d35712413909f92_normal.jpeg"/>
+						</a>
+					</div>
+					<div>
+						<a href="http://twitter.com/boscokakinlam">
+						@boscokakinlam
+						</a>
+						<small> Sun Nov 03 08:01:57 +0000 2013 </small>
+						<br />
+						Support #swhk #coopist HK food project #coopist_hkfood
+					</div>
+				</div>
+				
+				<div class="row-fluid">
+					<div class="span1">
+						<a href="http://twitter.com/hupili">
+							<img src="https://pbs.twimg.com/profile_images/378800000283621712/a5b897c6161ddaea540276d94e0842d4_normal.jpeg"/>
+						</a>
+					</div>
+					<div>
+						<a href="http://twitter.com/hupili">
+						@hupili
+						</a>
+						<small> Sun Nov 03 07:33:35 +0000 2013 </small>
+						<br />
+						People say that #coopist_hkfood should be formed! And! Here it is <a href="http://coopist.org/hkfood/"> http://t.co/EW59O1HO0Z </a>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+
+		<div class="row-fluid" id="wall">
+			<div class="span12">
+				<h2> People who supports this project </h2>
+				<div class="row-fluid">
+					Following coopists are supporting our movement!
+				</div>
+				<div class="row-fluid">
+					
+					<a href="http://twitter.com/hupili"><img src="https://pbs.twimg.com/profile_images/378800000283621712/a5b897c6161ddaea540276d94e0842d4_normal.jpeg" /> </a>
+					
+					<a href="http://twitter.com/ronaldkwokky"><img src="https://pbs.twimg.com/profile_images/378800000686278992/1b85f88e8f2dc76749f016d781aab86c_normal.jpeg" /> </a>
+					
+					<a href="http://twitter.com/boscokakinlam"><img src="https://pbs.twimg.com/profile_images/3572495263/18aa80fd8d88f3e85d35712413909f92_normal.jpeg" /> </a>
+					
+				</div>
+			</div>
+        </div>
+
+		<div class="row-fluid" id="tag">
+			<div class="span12">
+				<h2>Coopist in this project concerns</h2>
+				Coopists concern most:
+			</div>
+			<div class="span12">
+				<div id="tagcloud"></div>
+			</div>
+        </div>
+
+		<div class="row-fluid" id="tag">
+			<div class="span12">
+				<h2>Join</h2>
+				Interested in this project?
+				Leave your words with hash tag <code>#coopist_hkfood</code>
+			</div>
+        </div>
+	</div>
+</body>
+
+</html>

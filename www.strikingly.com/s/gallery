@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+<html itemscope itemtype='http://schema.org/Event' xmlns:fb='https://www.facebook.com/2008/fbml' xmlns:og='http://ogp.me/ns#' xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-6.newrelic.com","errorBeacon":"jserror.newrelic.com","licenseKey":"74f55de04c","applicationID":"272304","transactionName":"IlcLQxBeWFoHShYOWAhWSlADXVhTEEE=","queueTime":12,"applicationTime":26,"ttGuid":"","agentToken":null,"agent":"js-agent.newrelic.com/nr-356.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"UQcOWVBACgQCV1FW"};window.NREUM||(NREUM={}),__nr_require=function a(b,c,d){function e(f){if(!c[f]){var g=c[f]={exports:{}};b[f][0].call(g.exports,function(a){var c=b[f][1][a];return e(c?c:a)},g,g.exports,a,b,c,d)}return c[f].exports}for(var f=0;f<d.length;f++)e(d[f]);return e}({1:[function(a,b){function c(a,b,c){c||(c={});for(var d=f[a],e=d&&d.length||0,h=c[g]||(c[g]={}),i=0;e>i;i++)d[i].apply(h,b);return h}function d(a,b){var c=f[a]||(f[a]=[]);c.push(b)}function e(a){return delete a[g]}var f={},g="nr@context";b.exports={on:d,emit:c,clear:e}},{}],2:[function(a){function b(a,b,e,g,i){return h?h-=1:c("err",[i||new UncaughtException(a,b,e)]),"function"==typeof f?f.apply(this,d(arguments)):!1}function UncaughtException(a,b,c){this.message=a||"Uncaught error with no additional information",this.sourceURL=b,this.line=c}var c=a("handle"),d=a("lodash._slice"),e=a("../../../contextual-ee"),f=window.onerror,g=!1,h=0;a("loader").features.push("err"),window.onerror=b;try{throw new Error}catch(i){"stack"in i&&(a("../../wrap-timer"),a("../../wrap-raf"),"addEventListener"in window&&a("../../wrap-events"),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&a("../../wrap-xhr"),g=!0)}e.on("fn-start",function(){g&&(h+=1)}),e.on("fn-err",function(a,b,d){g&&(this.thrown=!0,c("err",[d,(new Date).getTime()]))}),e.on("fn-end",function(){g&&!this.thrown&&h>0&&(h-=1)})},{"../../../contextual-ee":1,"../../wrap-events":3,"../../wrap-raf":4,"../../wrap-timer":5,"../../wrap-xhr":6,handle:"4O2Y62",loader:"YLUGVp","lodash._slice":14}],3:[function(a){function b(a){d.inPlace(a,["addEventListener","removeEventListener"],"-",c)}function c(a){return a[1]}var d=a("../wrap-function"),e=(a("lodash._slice"),a("../contextual-ee"));if(b(window),"getPrototypeOf"in Object){for(var f=document;f&&!f.hasOwnProperty("addEventListener");)f=Object.getPrototypeOf(f);f&&b(f);for(var g=XMLHttpRequest.prototype;g&&!g.hasOwnProperty("addEventListener");)g=Object.getPrototypeOf(g);g&&b(g)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&b(XMLHttpRequest.prototype);e.on("addEventListener-start",function(a){if(a[1]){var b=a[1];"function"==typeof b?this.wrapped=b["nr@wrapped"]?a[1]=b["nr@wrapped"]:b["nr@wrapped"]=a[1]=d(b,"fn-"):"function"==typeof b.handleEvent&&d.inPlace(b,["handleEvent"],"fn-")}}),e.on("removeEventListener-start",function(a){var b=this.wrapped;b&&(a[1]=b)})},{"../contextual-ee":1,"../wrap-function":15,"lodash._slice":14}],4:[function(a){var b=(a("lodash._slice"),a("../wrap-function")),c=a("../contextual-ee");b.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),c.on("raf-start",function(a){a[0]=b(a[0],"fn-")})},{"../contextual-ee":1,"../wrap-function":15,"lodash._slice":14}],5:[function(a){function b(a){var b=a[0];"string"==typeof b&&(b=new Function(b)),a[0]=c(b,"fn-")}var c=(a("lodash._slice"),a("../wrap-function")),d=a("../contextual-ee");c.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),d.on("setTimer-start",b)},{"../contextual-ee":1,"../wrap-function":15,"lodash._slice":14}],6:[function(a){function b(){c.inPlace(this,f,"fn-")}var c=a("../wrap-function"),d=a("../contextual-ee"),e=window.XMLHttpRequest,f=["onload","onerror","onabort","onloadstart","onloadend","onprogress","onreadystatechange","ontimeout"];window.XMLHttpRequest=function(a){var f=new e(a);return d.emit("new-xhr",[],f),c.inPlace(f,["addEventListener","removeEventListener"],"-",function(a,b){return b}),f.addEventListener("readystatechange",b,!1),f},window.XMLHttpRequest.prototype=e.prototype},{"../contextual-ee":1,"../wrap-function":15}],7:[function(a){function b(a){var b=this.params,c=this.metrics;if(!this.ended){this.ended=!0;for(var d=0;j>d;d++)a.removeEventListener(i[d],this.listener,!1);if(!b.aborted){if(c.duration=(new Date).getTime()-this.startTime,4===a.readyState){if(b.status=a.status,a.responseText&&a.responseText.length&&(c.rxSize=a.responseText.length),this.sameOrigin){var f=a.getResponseHeader("X-NewRelic-App-Data");f&&(b.cat=f.split(", ").pop())}}else b.status=0;c.cbTime=this.cbTime,e("xhr",[b,c])}}}function c(a,b){var c=f(b),d=a.params;d.host=c.hostname+":"+c.port,d.pathname=c.pathname,a.sameOrigin=c.sameOrigin}function d(a,b){return b}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){a("loader").features.push("xhr");var e=a("handle"),f=a("./parse-url.js"),g=a("../../../wrap-function"),h=a("../../../contextual-ee"),i=["load","error","abort","timeout"],j=i.length,k=a("../../../loader/id");a("../../wrap-events"),a("../../wrap-xhr"),h.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=b,this.ended=!1,this.xhrGuids={}}),g.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",d),h.on("open-xhr-start",function(a){this.params={method:a[0]},c(this,a[1]),this.metrics={}}),h.on("open-xhr-end",function(a,b){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&b.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),h.on("send-xhr-start",function(a,b){var c=this.metrics,d=a[0],e=this;c&&d&&d.length&&(c.txSize=d.length),this.startTime=(new Date).getTime(),this.listener=function(a){"abort"===a.type&&(e.params.aborted=!0),("load"!==a.type||e.called===e.totalCbs&&(e.onloadCalled||"function"!=typeof b.onload))&&e.end(b)};for(var f=0;j>f;f++)b.addEventListener(i[f],this.listener,!1)}),h.on("xhr-cb-time",function(a,b,c){this.cbTime+=a,b?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof c.onload||this.end(c)}),h.on("xhr-load-added",function(a,b){var c=""+k(a)+!!b;this.xhrGuids&&!this.xhrGuids[c]&&(this.xhrGuids[c]=!0,this.totalCbs+=1)}),h.on("xhr-load-removed",function(a,b){var c=""+k(a)+!!b;this.xhrGuids&&this.xhrGuids[c]&&(delete this.xhrGuids[c],this.totalCbs-=1)}),h.on("addEventListener-end",function(a,b){b instanceof XMLHttpRequest&&"load"===a[0]&&h.emit("xhr-load-added",[a[1],a[2]],b)}),h.on("removeEventListener-end",function(a,b){b instanceof XMLHttpRequest&&"load"===a[0]&&h.emit("xhr-load-removed",[a[1],a[2]],b)}),h.on("fn-start",function(a,b,c){b instanceof XMLHttpRequest&&("onload"===c&&(this.onload=!0),("load"===(a[0]&&a[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),h.on("fn-end",function(a,b){this.xhrCbStart&&h.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,b],b)})}},{"../../../contextual-ee":1,"../../../loader/id":11,"../../../wrap-function":15,"../../wrap-events":3,"../../wrap-xhr":6,"./parse-url.js":8,handle:"4O2Y62",loader:"YLUGVp"}],8:[function(a,b){b.exports=function(a){var b=document.createElement("a"),c=window.location,d={};b.href=a,d.port=b.port;var e=b.href.split("://");return!d.port&&e[1]&&(d.port=e[1].split("/")[0].split(":")[1]),d.port&&"0"!==d.port||(d.port="https"===e[0]?"443":"80"),d.hostname=b.hostname||c.hostname,d.pathname=b.pathname,"/"!==d.pathname.charAt(0)&&(d.pathname="/"+d.pathname),d.sameOrigin=!b.hostname||b.hostname===document.domain&&b.port===c.port&&b.protocol===c.protocol,d}},{}],handle:[function(a,b){b.exports=a("4O2Y62")},{}],"4O2Y62":[function(a,b){function c(a,b){var c=d[a];return c?c.apply(this,b):(e[a]||(e[a]=[]),void e[a].push(b))}var d={},e={};b.exports=c,c.queues=e,c.handlers=d},{}],11:[function(a,b){function c(a){if(!a||"object"!=typeof a&&"function"!=typeof a)return-1;if(a===window)return 0;if(e.call(a,"__nr"))return a.__nr;try{return Object.defineProperty(a,"__nr",{value:d,writable:!0,enumerable:!1}),d}catch(b){return a.__nr=d,d}finally{d+=1}}var d=1,e=Object.prototype.hasOwnProperty;b.exports=c},{}],loader:[function(a,b){b.exports=a("YLUGVp")},{}],YLUGVp:[function(a,b){function c(){var a=m.info=NREUM.info;if(a&&a.agent&&a.licenseKey&&a.applicationID){m.proto="https"===l.split(":")[0]||a.sslForHttp?"https://":"http://",g("mark",["onload",f()]);var b=i.createElement("script");b.src=m.proto+a.agent,i.body.appendChild(b)}}function d(){"complete"===i.readyState&&e()}function e(){g("mark",["domContent",f()])}function f(){return(new Date).getTime()}var g=a("handle"),h=window,i=h.document,j="addEventListener",k="attachEvent",l=(""+location).split("?")[0],m=b.exports={offset:f(),origin:l,features:[]};i[j]?(i[j]("DOMContentLoaded",e,!1),h[j]("load",c,!1)):(i[k]("onreadystatechange",d),h[k]("onload",c)),g("mark",["firstbyte",f()])},{handle:"4O2Y62"}],14:[function(a,b){function c(a,b,c){b||(b=0),"undefined"==typeof c&&(c=a?a.length:0);for(var d=-1,e=c-b||0,f=Array(0>e?0:e);++d<e;)f[d]=a[b+d];return f}b.exports=c},{}],15:[function(a,b){function c(a,b,c,d){function nrWrapper(){var g,h=f(arguments),i=this,j=c&&c(h,i)||{};try{e.emit(b+"start",[h,i,d],j)}catch(k){}try{return g=a.apply(i,h)}catch(l){throw e.emit(b+"err",[h,i,l],j),l}finally{try{e.emit(b+"end",[h,i,g],j)}catch(k){}}}return a&&"function"==typeof a&&a.apply&&!a._wrapped?(b||(b=""),nrWrapper._wrapped=!0,nrWrapper):a}function d(a,b,d,e){d||(d="");var f,g,h,i="-"===d.charAt(0);for(h=0;h<b.length;h++)g=b[h],f=a[g],f&&"function"==typeof f&&f.apply&&!f._wrapped&&(a[g]=c(f,i?g+d:d,e,g,a))}var e=a("../contextual-ee"),f=a("lodash._slice");b.exports=c,c.inPlace=d},{"../contextual-ee":1,"lodash._slice":14}]},{},["YLUGVp",2,7]);</script>
+<title>Strikingly</title>
+<script type="text/javascript">
+//<![CDATA[
+window.$S = {};
+//]]>
+</script>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+<meta content="{&quot;analytics_logger_url&quot;:&quot;https://stats.striking.ly&quot;,&quot;env_test&quot;:false}" id="app-configs" name="app-configs" />
+<link href='//assets.strikingly.com/assets/icons/favicon-76a8d664f795283c6fa0c733550d49de.ico' rel='shortcut icon' type='image/x-icon'>
+<link href="//fonts.googleapis.com/css?family=Lobster|Lora:400,400italic" media="screen" rel="stylesheet" type="text/css" />
+<link href="//assets.strikingly.com/assets/application-82c2f4c75c8a05456db6d073e74933b6.css" media="screen" rel="stylesheet" type="text/css" />
+
+<meta name="ref" />
+<meta name="permalink" />
+<meta content="all" name="type" />
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<link href="//assets.strikingly.com/assets/landing-new-72a6463174d9f34ded1c3c0056c29ace.css" media="screen" rel="stylesheet" type="text/css" />
+<!--[if lte IE 7]>
+<link href="//assets.strikingly.com/assets/ie7-c013f69c9ad2a08f58e5318c37163b67.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 8]>
+<link href="//assets.strikingly.com/assets/ie8-82d956bc7a4118e3a420acb0145af4c6.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<script>
+  //<![CDATA[
+    // load errorception
+    (function(_,e,rr,s){_errs=[s];var c=_.onerror;_.onerror=function(){var a=arguments;_errs.push(a);
+    c&&c.apply(this,a)};var b=function(){var c=e.createElement(rr),b=e.getElementsByTagName(rr)[0];
+    c.src="//beacon.errorception.com/"+s+".js";c.async=!0;b.parentNode.insertBefore(c,b)};
+    _.addEventListener?_.addEventListener("load",b,!1):_.attachEvent("onload",b)})
+    (window,document,"script","518ac810441fb4b7180002fa");
+    //(window,document,"script", "518ac810441fb4b7180002fa");
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-25124444-1']);
+    _gaq.push(['_setDomainName', 'strikingly.com']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    window.PHRASE_CONFIG = {
+    prefix: '{[{__',
+    suffix: "__}]}",
+    autoLowercase: false
+    };
+  //]]>
+</script>
+
+<script>
+  //<![CDATA[
+    window.mixpanel = (function (a) {
+    // This snippet sets up a 'mixpanel' object to be used by Mixpanel.
+    a._i=[];a.init=function(b,c,f){function d(a,b){var c=b.split(".");2==c.length&&(a=a[c[0]],b=c[1]);a[b]=function(){a.push([b].concat(Array.prototype.slice.call(arguments,0)))}}var g=a;"undefined"!==typeof f?g=
+    a[f]=[]:f="mixpanel";g.people=g.people||[];h="disable track track_pageview track_links track_forms register register_once unregister identify name_tag set_config people.set people.increment".split(" ");for(e=0;e<h.length;e++)d(g,h[e]);a._i.push([b,c,f])};a.__SV=1.1;return a;
+    })(window.mixpanel||[]);
+    // Here we initialise 'mixpanel' as defined above, don't forget to include *your* Mixpanel API token.
+    mixpanel.init("71b075f2b148d8815c4845116b6b1f83");
+    loadMixpanel = function(c) {
+    // This snippet loads Mixpanels javascript library. This will be called either: a) after Vero successfully loads or, b) three (3) seconds after the page loads (a failsafe if Vero failed to load).
+    var b,d,h,e;b=c.createElement("script");b.type="text/javascript";b.async=!0;b.src=("https:"===c.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.1.min.js';d=c.getElementsByTagName("script")[0];d.parentNode.insertBefore(b,d);
+    };
+  //]]>
+</script>
+
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="XK1oqyux7bkQnnqe5LulDfO8jdp0XW4zOmHCiMG6OKk=" name="csrf-token" />
+
+</head>
+<body class='gallery locale-en' id='main' spellcheck='false'><script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js" type="text/javascript"></script>
+<script>
+window.jQuery || document.write('<script src="//assets.strikingly.com/assets/jquery-e51d7e0e6b5a9007cf1cd1bc06d12eba.js"><\/script>')
+</script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.min.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular-resource.min.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular-route.min.js" type="text/javascript"></script>
+<script>
+if (!window.angular) {
+document.write('<script src="//assets.strikingly.com/assets/angular-bd8614f699aae4ca3c401443d3ae5964.js"><\/script>');
+document.write('<script src="//assets.strikingly.com/assets/angular-resource-97e08f44913caa2839e33c64c6a6f3a8.js"><\/script>');
+document.write('<script src="//assets.strikingly.com/assets/angular-route-d755777e91a6bf24fb49dfc13d5f13f0.js"><\/script>');
+}
+</script>
+<script src="//assets.strikingly.com/assets/application-85813da1af47d9b625dcc6590dbf252d.js" type="text/javascript"></script>
+
+
+
+<script type='text/javascript'>
+  //<![CDATA[
+    (function() {
+  var ref, source, type;
+
+  ref = $('meta[name=ref]').attr('content');
+
+  type = $('meta[name=type]').attr('content');
+
+  source = document.referrer;
+
+  if (ref && !$.cookie('ref')) {
+    $.cookie('ref', ref);
+  }
+
+  if (type) {
+    $.cookie('gallery_type', type);
+  }
+
+  if (source && !$.cookie('source')) {
+    $.cookie('source', source);
+  }
+
+  mixpanel.track("Gallery - Landing Page", {
+    'ref': ref,
+    'source': source,
+    'type': type
+  });
+
+  $(function() {
+    if ($(window).height() > 360 && $(window).width() > 360) {
+      $('.view-site-btn').click(function(event) {
+        var el, href;
+        event.preventDefault();
+        el = $(this);
+        href = el.closest('a').attr('href');
+        $B.ui.openIframePopup(href, {
+          showAddress: true
+        });
+        $('.floated-edit-btn').remove();
+        return el.closest('.image-container').find('.template-preview-button').clone().addClass('floated-edit-btn').prependTo($('.s-page-content')).show();
+      });
+    }
+    return $('.button-last').click(function() {
+      var top;
+      top = $('.section').last().offset().top;
+      if ($('.section').last().height() < $(window).height()) {
+        top -= $(window).height() - $('.section').last().height();
+      }
+      return $('html, body').stop().animate({
+        scrollTop: top
+      }, 800, 'swing');
+    });
+  });
+
+  $B.loadFacebookScript();
+
+  $B.loadTwitterScript();
+
+}).call(this);
+
+  //]]>
+</script>
+<script id='site-gallery-category' type='text/x-underscore-tmpl'>
+<a class='tag ib' href='javascript:void(0);'>{{=obj.category}}</a>
+</script>
+<div class='upper-right'>
+<a class='button' href='/s/login'>Log in</a>
+</div>
+<div class='demo s-page-layer fill'>
+<div class='s-page-shade fill'></div>
+<div class='s-page-wrapper'>
+<div class='back-btn'>
+<div class='fa fa-reply'></div>
+Back
+</div>
+<div class='address'>
+<a class='link' target='_blank'></a>
+</div>
+<div class='s-page-content'>
+<iframe frameborder='0' id='s-demo-iframe' marginheight='0' marginwidth='0' src=''></iframe>
+</div>
+</div>
+</div>
+<div class='s-nav'>
+<div class='highlight'>
+<div class='container'>
+<div class='ten columns center offset-three'>
+<div class='div' style='margin-top:8px;'></div>
+<h4 class='thin center caps ib middle white'>You've been logged out.</h4>
+<br>
+<br>
+<h5 class='thin no-caps'>Before you go, check out some sites our users have created!</h5>
+<br>
+&nbsp; &nbsp; &nbsp;
+<div class='social-media-buttons'>
+<div class='social-media-button' style='text-align:left; margin-right:10px;'>
+<div class='fb-like' data-font='segoe ui' data-href='http://facebook.com/strikingly' data-layout='button_count' data-send='false' data-show-faces='false' data-width='100'></div>
+</div>
+<div class='social-media-button' style='position:relative; left: 5px;'>
+<a class='twitter-share-button' data-counturl='https://www.strikingly.com' data-text='Check out these awesome Strikingly sites!' data-url='http://www.strikingly.com/s/gallery?ref=tw' data-via='Strikingly' href='https://twitter.com/share'>Tweet</a>
+</div>
+</div>
+<br>
+</div>
+</div>
+</div>
+</div>
+<div class='sections'>
+<div class='section gray strikingly-gallery'>
+<div class='inner skinny'>
+<div class='container'>
+<div class='sixteen columns center'>
+<ul class='tags' id='tag-list'>
+<li>
+<p class='ib caps light small'>Category &nbsp;</p>
+</li>
+<li>
+<a class='tag ib' href='/s/gallery'>All</a>
+</li>
+<li>
+<a class='tag ib' href='/s/business-template-gallery'>Business</a>
+</li>
+<li>
+<a class='tag ib' href='/s/portfolio-template-gallery'>Artist</a>
+</li>
+<li>
+<a class='tag ib' href='/s/event-template-gallery'>Event</a>
+</li>
+<li>
+<a class='tag ib' href='/s/personal-template-gallery'>Personal</a>
+</li>
+<li>
+<a class='tag ib' href='/s/startup-template-gallery'>Startup</a>
+</li>
+<li>
+<a class='tag ib' href='/s/fun-template-gallery'>Fun</a>
+</li>
+</ul>
+</div>
+</div>
+<div class='container center' id='site-gallery'>
+<div class='center columns eight ib no-float' style='margin:7px;'>
+<div class='image-container'>
+<a href="/s/pages/template_preview?template=foxbox" class="template-preview-button btn" style="display:none;">View Site Template</a>
+<a class='image view-site-btn' href='http://fox.do/' target='_blank'>
+<div class='image-overlay'>
+<div class='image-overlay-bottom'></div>
+<div class='image-overlay-inner'>
+<div class='top'>
+<h5>The Crafty Fox Box</h5>
+</div>
+<div class='bottom'>
+<div class='btn'>View Site</div>
+</div>
+</div>
+</div>
+<img alt="The Crafty Fox Box" src="http://uploads.striking.ly/page/images/gallery/fox.jpg" />
+</a>
+</div>
+<div class='image-title'>
+<h6 class='caps'>The Crafty Fox Box</h6>
+</div>
+</div>
+<div class='center columns eight ib no-float' style='margin:7px;'>
+<div class='image-container'>
+<a href="/s/pages/template_preview?template=tourdesasebo" class="template-preview-button btn" style="display:none;">View Site Template</a>
+<a class='image view-site-btn' href='http://www.tourdesasebo.com/' target='_blank'>
+<div class='image-overlay'>
+<div class='image-overlay-bottom'></div>
+<div class='image-overlay-inner'>
+<div class='top'>
+<h5>Tour de Sasebo</h5>
+</div>
+<div class='bottom'>
+<div class='btn'>View Site</div>
+</div>
+</div>
+</div>
+<img alt="Tour de Sasebo" src="http://uploads.striking.ly/page/images/gallery/tourdesasebo.jpg" />
+</a>
+</div>
+<div class='image-title'>
+<h6 class='caps'>Tour de Sasebo</h6>
+</div>
+</div>
+<div class='center columns ib no-float third' style='margin:7px;'>
+<div class='image-container'>
+<a href="/s/pages/template_preview?template=mwseibel" class="template-preview-button btn" style="display:none;">View Site Template</a>
+<a class='image view-site-btn' href='http://michaelseibel.com/' target='_blank'>
+<div class='image-overlay'>
+<div class='image-overlay-bottom'></div>
+<div class='image-overlay-inner'>
+<div class='top'>
+<h5>Michael Seibel</h5>
+</div>
+<div class='bottom'>
+<div class='btn'>View Site</div>
+</div>
+</div>
+</div>
+<img alt="Michael Seibel" src="http://uploads.striking.ly/page/images/gallery/seibel.jpg" />
+</a>
+</div>
+<div class='image-title'>
+<h6 class='caps'>Michael Seibel</h6>
+</div>
+</div>
+<div class='center columns ib no-float third' style='margin:7px;'>
+<div class='image-container'>
+<a href="/s/pages/template_preview?template=lexparsimoniae" class="template-preview-button btn" style="display:none;">View Site Template</a>
+<a class='image view-site-btn' href='http://www.lexparsimoniae.co/' target='_blank'>
+<div class='image-overlay'>
+<div class='image-overlay-bottom'></div>
+<div class='image-overlay-inner'>
+<div class='top'>
+<h5>Lex Minimal Sunglasses</h5>
+</div>
+<div class='bottom'>
+<div class='btn'>View Site</div>
+</div>
+</div>
+</div>
+<img alt="Lex Minimal Sunglasses" src="http://uploads.striking.ly/page/images/gallery/lexparsimoniae.jpg" />
+</a>
+</div>
+<div class='image-title'>
+<h6 class='caps'>Lex Minimal Sunglasses</h6>
+</div>
+</div>
+<div class='center columns ib no-float third' style='margin:7px;'>
+<div class='image-container'>
+<a href="/s/pages/template_preview?template=yathletics" class="template-preview-button btn" style="display:none;">View Site Template</a>
+<a class='image view-site-btn' href='http://www.yathletics.com/' target='_blank'>
+<div class='image-overlay'>
+<div class='image-overlay-bottom'></div>
+<div class='image-overlay-inner'>
+<div class='top'>
+<h5>Y Athletics</h5>
+</div>
+<div class='bottom'>
+<div class='btn'>View Site</div>
+</div>
+</div>
+</div>
+<img alt="Y Athletics" src="http://uploads.striking.ly/page/images/gallery/y-athletics.jpg" />
+</a>
+</div>
+<div class='image-title'>
+<h6 class='caps'>Y Athletics</h6>
+</div>
+</div>
+<div class='center columns eight ib no-float' style='margin:7px;'>
+<div class='image-container'>
+<a href="/s/pages/template_preview?template=hoax" class="template-preview-button btn" style="display:none;">View Site Template</a>
+<a class='image view-site-btn' href='http://www.hoax-art.com/' target='_blank'>
+<div class='image-overlay'>
+<div class='image-overlay-bottom'></div>
+<div class='image-overlay-inner'>
+<div class='top'>
+<h5>HOAX Art Prints</h5>
+</div>
+<div class='bottom'>
+<div class='btn'>View Site</div>
+</div>
+</div>
+</div>
+<img alt="HOAX Art Prints" src="http://uploads.striking.ly/page/images/gallery/hoaxart.jpg" />
+</a>
+</div>
+<div class='image-title'>
+<h6 class='caps'>HOAX Art Prints</h6>
+</div>
+</div>
+<div class='center columns eight ib no-float' style='margin:7px;'>
+<div class='image-container'>
+<a href="/s/pages/template_preview?template=whitman-house" class="template-preview-button btn" style="display:none;">View Site Template</a>
+<a class='image view-site-btn' href='http://thewhitmanhouse.com/' target='_blank'>
+<div class='image-overlay'>
+<div class='image-overlay-bottom'></div>
+<div class='image-overlay-inner'>
+<div class='top'>
+<h5>Whitman House</h5>
+</div>
+<div class='bottom'>
+<div class='btn'>View Site</div>
+</div>
+</div>
+</div>
+<img alt="Whitman House" src="http://uploads.striking.ly/page/images/gallery/whitman.jpg" />
+</a>
+</div>
+<div class='image-title'>
+<h6 class='caps'>Whitman House</h6>
+</div>
+</div>
+<div class='center columns ib no-float third' style='margin:7px;'>
+<div class='image-container'>
+<a href="/s/pages/template_preview?template=borben" class="template-preview-button btn" style="display:none;">View Site Template</a>
+<a class='image view-site-btn' href='http://www.strikingly.com/borben' target='_blank'>
+<div class='image-overlay'>
+<div class='image-overlay-bottom'></div>
+<div class='image-overlay-inner'>
+<div class='top'>
+<h5>Ben Borowiecki</h5>
+</div>
+<div class='bottom'>
+<div class='btn'>View Site</div>
+</div>
+</div>
+</div>
+<img alt="Ben Borowiecki" src="http://uploads.striking.ly/page/images/gallery/borben.jpg" />
+</a>
+</div>
+<div class='image-title'>
+<h6 class='caps'>Ben Borowiecki</h6>
+</div>
+</div>
+<div class='center columns ib no-float third' style='margin:7px;'>
+<div class='image-container'>
+<a href="/s/pages/template_preview?template=kevalliere" class="template-preview-button btn" style="display:none;">View Site Template</a>
+<a class='image view-site-btn' href='http://www.strikingly.com/kevalliere' target='_blank'>
+<div class='image-overlay'>
+<div class='image-overlay-bottom'></div>
+<div class='image-overlay-inner'>
+<div class='top'>
+<h5>Kevin Valliere</h5>
+</div>
+<div class='bottom'>
+<div class='btn'>View Site</div>
+</div>
+</div>
+</div>
+<img alt="Kevin Valliere" src="http://uploads.striking.ly/page/images/gallery/kevalliere.jpg" />
+</a>
+</div>
+<div class='image-title'>
+<h6 class='caps'>Kevin Valliere</h6>
+</div>
+</div>
+<div class='center columns ib no-float third' style='margin:7px;'>
+<div class='image-container'>
+<a href="/s/pages/template_preview?template=site22181-1363714042" class="template-preview-button btn" style="display:none;">View Site Template</a>
+<a class='image view-site-btn' href='http://flatwhitephotos.com/' target='_blank'>
+<div class='image-overlay'>
+<div class='image-overlay-bottom'></div>
+<div class='image-overlay-inner'>
+<div class='top'>
+<h5>Flat White Photography</h5>
+</div>
+<div class='bottom'>
+<div class='btn'>View Site</div>
+</div>
+</div>
+</div>
+<img alt="Flat White Photography" src="http://uploads.striking.ly/page/images/gallery/flatwhite.jpg" />
+</a>
+</div>
+<div class='image-title'>
+<h6 class='caps'>Flat White Photography</h6>
+</div>
+</div>
+<div class='center columns eight ib no-float' style='margin:7px;'>
+<div class='image-container'>
+<a href="/s/pages/template_preview?template=littlehelpers" class="template-preview-button btn" style="display:none;">View Site Template</a>
+<a class='image view-site-btn' href='http://www.strikingly.com/littlehelpers' target='_blank'>
+<div class='image-overlay'>
+<div class='image-overlay-bottom'></div>
+<div class='image-overlay-inner'>
+<div class='top'>
+<h5>Little Helper</h5>
+</div>
+<div class='bottom'>
+<div class='btn'>View Site</div>
+</div>
+</div>
+</div>
+<img alt="Little Helper" src="http://uploads.striking.ly/page/images/gallery/littlehelpers.jpg" />
+</a>
+</div>
+<div class='image-title'>
+<h6 class='caps'>Little Helper</h6>
+</div>
+</div>
+<div class='center columns eight ib no-float' style='margin:7px;'>
+<div class='image-container'>
+<a href="/s/pages/template_preview?template=watercress" class="template-preview-button btn" style="display:none;">View Site Template</a>
+<a class='image view-site-btn' href='http://www.watercressbali.com/' target='_blank'>
+<div class='image-overlay'>
+<div class='image-overlay-bottom'></div>
+<div class='image-overlay-inner'>
+<div class='top'>
+<h5>Watercress Bali</h5>
+</div>
+<div class='bottom'>
+<div class='btn'>View Site</div>
+</div>
+</div>
+</div>
+<img alt="Watercress Bali" src="http://uploads.striking.ly/page/images/gallery/watercress.jpg" />
+</a>
+</div>
+<div class='image-title'>
+<h6 class='caps'>Watercress Bali</h6>
+</div>
+</div>
+<div class='center columns ib no-float third' style='margin:7px;'>
+<div class='image-container'>
+<a href="/s/pages/template_preview?template=ognevwedding2" class="template-preview-button btn" style="display:none;">View Site Template</a>
+<a class='image view-site-btn' href='http://wang-ognev.us/' target='_blank'>
+<div class='image-overlay'>
+<div class='image-overlay-bottom'></div>
+<div class='image-overlay-inner'>
+<div class='top'>
+<h5>Wang-Ognev Wedding</h5>
+</div>
+<div class='bottom'>
+<div class='btn'>View Site</div>
+</div>
+</div>
+</div>
+<img alt="Wang-Ognev Wedding" src="http://uploads.striking.ly/page/images/gallery/wang-ognev.jpg" />
+</a>
+</div>
+<div class='image-title'>
+<h6 class='caps'>Wang-Ognev Wedding</h6>
+</div>
+</div>
+<div class='center columns ib no-float third' style='margin:7px;'>
+<div class='image-container'>
+<a href="/s/pages/template_preview?template=detroitbizgrid" class="template-preview-button btn" style="display:none;">View Site Template</a>
+<a class='image view-site-btn' href='http://detroitbizgrid.com/' target='_blank'>
+<div class='image-overlay'>
+<div class='image-overlay-bottom'></div>
+<div class='image-overlay-inner'>
+<div class='top'>
+<h5>Detroit BizGrid</h5>
+</div>
+<div class='bottom'>
+<div class='btn'>View Site</div>
+</div>
+</div>
+</div>
+<img alt="Detroit BizGrid" src="http://uploads.striking.ly/page/images/gallery/bizgrid.jpg" />
+</a>
+</div>
+<div class='image-title'>
+<h6 class='caps'>Detroit BizGrid</h6>
+</div>
+</div>
+<div class='center columns ib no-float third' style='margin:7px;'>
+<div class='image-container'>
+<a href="/s/pages/template_preview?template=proage2" class="template-preview-button btn" style="display:none;">View Site Template</a>
+<a class='image view-site-btn' href='http://www.proage.sg/' target='_blank'>
+<div class='image-overlay'>
+<div class='image-overlay-bottom'></div>
+<div class='image-overlay-inner'>
+<div class='top'>
+<h5>ProAge Wellness</h5>
+</div>
+<div class='bottom'>
+<div class='btn'>View Site</div>
+</div>
+</div>
+</div>
+<img alt="ProAge Wellness" src="http://uploads.striking.ly/page/images/gallery/proage.jpg" />
+</a>
+</div>
+<div class='image-title'>
+<h6 class='caps'>ProAge Wellness</h6>
+</div>
+</div>
+<div class='center columns eight ib no-float' style='margin:7px;'>
+<div class='image-container'>
+<a href="/s/pages/template_preview?template=vegan" class="template-preview-button btn" style="display:none;">View Site Template</a>
+<a class='image view-site-btn' href='http://dees.ie/' target='_blank'>
+<div class='image-overlay'>
+<div class='image-overlay-bottom'></div>
+<div class='image-overlay-inner'>
+<div class='top'>
+<h5>Dees Organics</h5>
+</div>
+<div class='bottom'>
+<div class='btn'>View Site</div>
+</div>
+</div>
+</div>
+<img alt="Dees Organics" src="http://uploads.striking.ly/page/images/gallery/dees.jpg" />
+</a>
+</div>
+<div class='image-title'>
+<h6 class='caps'>Dees Organics</h6>
+</div>
+</div>
+<div class='center columns eight ib no-float' style='margin:7px;'>
+<div class='image-container'>
+<a href="/s/pages/template_preview?template=carolinaandreoli" class="template-preview-button btn" style="display:none;">View Site Template</a>
+<a class='image view-site-btn' href='http://www.carolinaandreoli.com/' target='_blank'>
+<div class='image-overlay'>
+<div class='image-overlay-bottom'></div>
+<div class='image-overlay-inner'>
+<div class='top'>
+<h5>Carolina Andreoli Portfolio</h5>
+</div>
+<div class='bottom'>
+<div class='btn'>View Site</div>
+</div>
+</div>
+</div>
+<img alt="Carolina Andreoli Portfolio" src="http://uploads.striking.ly/page/images/gallery/caro.jpg" />
+</a>
+</div>
+<div class='image-title'>
+<h6 class='caps'>Carolina Andreoli Portfolio</h6>
+</div>
+</div>
+<div class='center columns ib no-float third' style='margin:7px;'>
+<div class='image-container'>
+<a href="/s/pages/template_preview?template=holidaykittens" class="template-preview-button btn" style="display:none;">View Site Template</a>
+<a class='image view-site-btn' href='http://www.strikingly.com/holidaykittens' target='_blank'>
+<div class='image-overlay'>
+<div class='image-overlay-bottom'></div>
+<div class='image-overlay-inner'>
+<div class='top'>
+<h5>Animals in Holiday Attire</h5>
+</div>
+<div class='bottom'>
+<div class='btn'>View Site</div>
+</div>
+</div>
+</div>
+<img alt="Animals in Holiday Attire" src="http://uploads.striking.ly/page/images/gallery/holidaykittens.jpg" />
+</a>
+</div>
+<div class='image-title'>
+<h6 class='caps'>Animals in Holiday Attire</h6>
+</div>
+</div>
+<div class='center columns ib no-float third' style='margin:7px;'>
+<div class='image-container'>
+<a href="/s/pages/template_preview?template=worstgifts" class="template-preview-button btn" style="display:none;">View Site Template</a>
+<a class='image view-site-btn' href='http://www.strikingly.com/worstgifts' target='_blank'>
+<div class='image-overlay'>
+<div class='image-overlay-bottom'></div>
+<div class='image-overlay-inner'>
+<div class='top'>
+<h5>Worst (or Best) Gifts</h5>
+</div>
+<div class='bottom'>
+<div class='btn'>View Site</div>
+</div>
+</div>
+</div>
+<img alt="Worst (or Best) Gifts" src="http://uploads.striking.ly/page/images/gallery/worstgifts.jpg" />
+</a>
+</div>
+<div class='image-title'>
+<h6 class='caps'>Worst (or Best) Gifts</h6>
+</div>
+</div>
+<div class='center columns ib no-float third' style='margin:7px;'>
+<div class='image-container'>
+<a href="/s/pages/template_preview?template=site36394-1365426790" class="template-preview-button btn" style="display:none;">View Site Template</a>
+<a class='image view-site-btn' href='http://lawrenceloh.com/' target='_blank'>
+<div class='image-overlay'>
+<div class='image-overlay-bottom'></div>
+<div class='image-overlay-inner'>
+<div class='top'>
+<h5>Lawrence Loh</h5>
+</div>
+<div class='bottom'>
+<div class='btn'>View Site</div>
+</div>
+</div>
+</div>
+<img alt="Lawrence Loh" src="http://uploads.striking.ly/page/images/gallery/lawrence-loh.jpg" />
+</a>
+</div>
+<div class='image-title'>
+<h6 class='caps'>Lawrence Loh</h6>
+</div>
+</div>
+<div class='center columns eight ib no-float' style='margin:7px;'>
+<div class='image-container'>
+<a href="/s/pages/template_preview?template=ten-thanksgiving-deserts-full-of-bourbon" class="template-preview-button btn" style="display:none;">View Site Template</a>
+<a class='image view-site-btn' href='http://www.strikingly.com/ten-thanksgiving-deserts-full-of-bourbon' target='_blank'>
+<div class='image-overlay'>
+<div class='image-overlay-bottom'></div>
+<div class='image-overlay-inner'>
+<div class='top'>
+<h5>Get Drunk on Pie</h5>
+</div>
+<div class='bottom'>
+<div class='btn'>View Site</div>
+</div>
+</div>
+</div>
+<img alt="Get Drunk on Pie" src="http://uploads.striking.ly/page/images/gallery/ten-thanksgiving-deserts-full-of-bourbon.jpg" />
+</a>
+</div>
+<div class='image-title'>
+<h6 class='caps'>Get Drunk on Pie</h6>
+</div>
+</div>
+<div class='center columns eight ib no-float' style='margin:7px;'>
+<div class='image-container'>
+<a href="/s/pages/template_preview?template=celesterose" class="template-preview-button btn" style="display:none;">View Site Template</a>
+<a class='image view-site-btn' href='http://www.celesterose.com/' target='_blank'>
+<div class='image-overlay'>
+<div class='image-overlay-bottom'></div>
+<div class='image-overlay-inner'>
+<div class='top'>
+<h5>Celeste Rose</h5>
+</div>
+<div class='bottom'>
+<div class='btn'>View Site</div>
+</div>
+</div>
+</div>
+<img alt="Celeste Rose" src="http://uploads.striking.ly/page/images/gallery/celesterose.jpg" />
+</a>
+</div>
+<div class='image-title'>
+<h6 class='caps'>Celeste Rose</h6>
+</div>
+</div>
+<div class='center columns ib no-float third' style='margin:7px;'>
+<div class='image-container'>
+<a href="/s/pages/template_preview?template=standup-comedians-xmas" class="template-preview-button btn" style="display:none;">View Site Template</a>
+<a class='image view-site-btn' href='http://www.strikingly.com/standup-comedians-xmas' target='_blank'>
+<div class='image-overlay'>
+<div class='image-overlay-bottom'></div>
+<div class='image-overlay-inner'>
+<div class='top'>
+<h5>Stand-up Comedians on Christmas</h5>
+</div>
+<div class='bottom'>
+<div class='btn'>View Site</div>
+</div>
+</div>
+</div>
+<img alt="Stand-up Comedians on Christmas" src="http://uploads.striking.ly/page/images/gallery/standup-comedians-xmas.jpg" />
+</a>
+</div>
+<div class='image-title'>
+<h6 class='caps'>Stand-up Comedians on Christmas</h6>
+</div>
+</div>
+<div class='center columns ib no-float third' style='margin:7px;'>
+<div class='image-container'>
+<a href="/s/pages/template_preview?template=hustleandplay" class="template-preview-button btn" style="display:none;">View Site Template</a>
+<a class='image view-site-btn' href='http://www.hustleandplay.com/' target='_blank'>
+<div class='image-overlay'>
+<div class='image-overlay-bottom'></div>
+<div class='image-overlay-inner'>
+<div class='top'>
+<h5>Hustle &amp; Play</h5>
+</div>
+<div class='bottom'>
+<div class='btn'>View Site</div>
+</div>
+</div>
+</div>
+<img alt="Hustle &amp; Play" src="http://uploads.striking.ly/page/images/gallery/hustle.jpg" />
+</a>
+</div>
+<div class='image-title'>
+<h6 class='caps'>Hustle &amp; Play</h6>
+</div>
+</div>
+<div class='center columns ib no-float third' style='margin:7px;'>
+<div class='image-container'>
+<a href="/s/pages/template_preview?template=earther" class="template-preview-button btn" style="display:none;">View Site Template</a>
+<a class='image view-site-btn' href='http://www.strikingly.com/earther' target='_blank'>
+<div class='image-overlay'>
+<div class='image-overlay-bottom'></div>
+<div class='image-overlay-inner'>
+<div class='top'>
+<h5>Asa Ishino Porfolio</h5>
+</div>
+<div class='bottom'>
+<div class='btn'>View Site</div>
+</div>
+</div>
+</div>
+<img alt="Asa Ishino Porfolio" src="http://uploads.striking.ly/page/images/gallery/earther.jpg" />
+</a>
+</div>
+<div class='image-title'>
+<h6 class='caps'>Asa Ishino Porfolio</h6>
+</div>
+</div>
+<div class='center columns eight ib no-float' style='margin:7px;'>
+<div class='image-container'>
+<a href="/s/pages/template_preview?template=quinntonharris" class="template-preview-button btn" style="display:none;">View Site Template</a>
+<a class='image view-site-btn' href='http://www.strikingly.com/quinntonharris' target='_blank'>
+<div class='image-overlay'>
+<div class='image-overlay-bottom'></div>
+<div class='image-overlay-inner'>
+<div class='top'>
+<h5>Quinnton Harris's Story</h5>
+</div>
+<div class='bottom'>
+<div class='btn'>View Site</div>
+</div>
+</div>
+</div>
+<img alt="Quinnton Harris&#x27;s Story" src="http://uploads.striking.ly/page/images/gallery/quinnton.jpg" />
+</a>
+</div>
+<div class='image-title'>
+<h6 class='caps'>Quinnton Harris's Story</h6>
+</div>
+</div>
+<div class='center columns eight ib no-float' style='margin:7px;'>
+<div class='image-container'>
+<a href="/s/pages/template_preview?template=jacobtomas" class="template-preview-button btn" style="display:none;">View Site Template</a>
+<a class='image view-site-btn' href='http://www.strikingly.com/jacobtomas' target='_blank'>
+<div class='image-overlay'>
+<div class='image-overlay-bottom'></div>
+<div class='image-overlay-inner'>
+<div class='top'>
+<h5>Jacob Tomas</h5>
+</div>
+<div class='bottom'>
+<div class='btn'>View Site</div>
+</div>
+</div>
+</div>
+<img alt="Jacob Tomas" src="http://uploads.striking.ly/page/images/gallery/jacobthomas.jpg" />
+</a>
+</div>
+<div class='image-title'>
+<h6 class='caps'>Jacob Tomas</h6>
+</div>
+</div>
+<div class='center columns ib no-float third' style='margin:7px;'>
+<div class='image-container'>
+<a href="/s/pages/template_preview?template=dukestartupchallenge" class="template-preview-button btn" style="display:none;">View Site Template</a>
+<a class='image view-site-btn' href='http://www.dukestartupchallenge.org/' target='_blank'>
+<div class='image-overlay'>
+<div class='image-overlay-bottom'></div>
+<div class='image-overlay-inner'>
+<div class='top'>
+<h5>Duke Start-Up Challenge</h5>
+</div>
+<div class='bottom'>
+<div class='btn'>View Site</div>
+</div>
+</div>
+</div>
+<img alt="Duke Start-Up Challenge" src="http://uploads.striking.ly/page/images/gallery/duke.jpg" />
+</a>
+</div>
+<div class='image-title'>
+<h6 class='caps'>Duke Start-Up Challenge</h6>
+</div>
+</div>
+<div class='center columns ib no-float third' style='margin:7px;'>
+<div class='image-container'>
+<a href="/s/pages/template_preview?template=rio2016olimpicos" class="template-preview-button btn" style="display:none;">View Site Template</a>
+<a class='image view-site-btn' href='http://www.strikingly.com/rio2016olimpicos' target='_blank'>
+<div class='image-overlay'>
+<div class='image-overlay-bottom'></div>
+<div class='image-overlay-inner'>
+<div class='top'>
+<h5>Rio 2016 Olympics</h5>
+</div>
+<div class='bottom'>
+<div class='btn'>View Site</div>
+</div>
+</div>
+</div>
+<img alt="Rio 2016 Olympics" src="http://uploads.striking.ly/page/images/gallery/rio-2016.jpg" />
+</a>
+</div>
+<div class='image-title'>
+<h6 class='caps'>Rio 2016 Olympics</h6>
+</div>
+</div>
+<div class='center columns ib no-float third' style='margin:7px;'>
+<div class='image-container'>
+<a href="/s/pages/template_preview?template=wikistage" class="template-preview-button btn" style="display:none;">View Site Template</a>
+<a class='image view-site-btn' href='http://www.wikistage.org/' target='_blank'>
+<div class='image-overlay'>
+<div class='image-overlay-bottom'></div>
+<div class='image-overlay-inner'>
+<div class='top'>
+<h5>Wikistage</h5>
+</div>
+<div class='bottom'>
+<div class='btn'>View Site</div>
+</div>
+</div>
+</div>
+<img alt="Wikistage" src="http://uploads.striking.ly/page/images/gallery/wikistage.jpg" />
+</a>
+</div>
+<div class='image-title'>
+<h6 class='caps'>Wikistage</h6>
+</div>
+</div>
+<div class='center columns eight ib no-float' style='margin:7px;'>
+<div class='image-container'>
+<a href="/s/pages/template_preview?template=bountourage" class="template-preview-button btn" style="display:none;">View Site Template</a>
+<a class='image view-site-btn' href='http://www.bountourage.com/' target='_blank'>
+<div class='image-overlay'>
+<div class='image-overlay-bottom'></div>
+<div class='image-overlay-inner'>
+<div class='top'>
+<h5>Bountourage</h5>
+</div>
+<div class='bottom'>
+<div class='btn'>View Site</div>
+</div>
+</div>
+</div>
+<img alt="Bountourage" src="http://uploads.striking.ly/page/images/gallery/bountourage.jpg" />
+</a>
+</div>
+<div class='image-title'>
+<h6 class='caps'>Bountourage</h6>
+</div>
+</div>
+<div class='center columns eight ib no-float' style='margin:7px;'>
+<div class='image-container'>
+<a href="/s/pages/template_preview?template=diy-thanksgiving" class="template-preview-button btn" style="display:none;">View Site Template</a>
+<a class='image view-site-btn' href='http://www.strikingly.com/diy-thanksgiving' target='_blank'>
+<div class='image-overlay'>
+<div class='image-overlay-bottom'></div>
+<div class='image-overlay-inner'>
+<div class='top'>
+<h5>Mother &amp; Sisters DIY Thanksgiving</h5>
+</div>
+<div class='bottom'>
+<div class='btn'>View Site</div>
+</div>
+</div>
+</div>
+<img alt="Mother &amp; Sisters DIY Thanksgiving" src="http://uploads.striking.ly/page/images/gallery/diy-thanksgiving.jpg" />
+</a>
+</div>
+<div class='image-title'>
+<h6 class='caps'>Mother &amp; Sisters DIY Thanksgiving</h6>
+</div>
+</div>
+<div class='center columns ib no-float third' style='margin:7px;'>
+<div class='image-container'>
+<a href="/s/pages/template_preview?template=senkarasic" class="template-preview-button btn" style="display:none;">View Site Template</a>
+<a class='image view-site-btn' href='http://www.strikingly.com/senkarasic' target='_blank'>
+<div class='image-overlay'>
+<div class='image-overlay-bottom'></div>
+<div class='image-overlay-inner'>
+<div class='top'>
+<h5>Senka Rasic Portfolio</h5>
+</div>
+<div class='bottom'>
+<div class='btn'>View Site</div>
+</div>
+</div>
+</div>
+<img alt="Senka Rasic Portfolio" src="http://uploads.striking.ly/page/images/gallery/senka.jpg" />
+</a>
+</div>
+<div class='image-title'>
+<h6 class='caps'>Senka Rasic Portfolio</h6>
+</div>
+</div>
+<div class='center columns ib no-float third' style='margin:7px;'>
+<div class='image-container'>
+<a href="/s/pages/template_preview?template=morag" class="template-preview-button btn" style="display:none;">View Site Template</a>
+<a class='image view-site-btn' href='http://www.strikingly.com/morag' target='_blank'>
+<div class='image-overlay'>
+<div class='image-overlay-bottom'></div>
+<div class='image-overlay-inner'>
+<div class='top'>
+<h5>1st Anniversary Surprise!</h5>
+</div>
+<div class='bottom'>
+<div class='btn'>View Site</div>
+</div>
+</div>
+</div>
+<img alt="1st Anniversary Surprise!" src="http://uploads.striking.ly/page/images/gallery/morag.jpg" />
+</a>
+</div>
+<div class='image-title'>
+<h6 class='caps'>1st Anniversary Surprise!</h6>
+</div>
+</div>
+<div class='center columns ib no-float third' style='margin:7px;'>
+<div class='image-container'>
+<a href="/s/pages/template_preview?template=thechaosasia" class="template-preview-button btn" style="display:none;">View Site Template</a>
+<a class='image view-site-btn' href='http://thechaosasia.com/' target='_blank'>
+<div class='image-overlay'>
+<div class='image-overlay-bottom'></div>
+<div class='image-overlay-inner'>
+<div class='top'>
+<h5>The Chaos Asia</h5>
+</div>
+<div class='bottom'>
+<div class='btn'>View Site</div>
+</div>
+</div>
+</div>
+<img alt="The Chaos Asia" src="http://uploads.striking.ly/page/images/gallery/chaos.jpg" />
+</a>
+</div>
+<div class='image-title'>
+<h6 class='caps'>The Chaos Asia</h6>
+</div>
+</div>
+<div class='center columns eight ib no-float' style='margin:7px;'>
+<div class='image-container'>
+<a href="/s/pages/template_preview?template=gary" class="template-preview-button btn" style="display:none;">View Site Template</a>
+<a class='image view-site-btn' href='http://www.garysheng.com/' target='_blank'>
+<div class='image-overlay'>
+<div class='image-overlay-bottom'></div>
+<div class='image-overlay-inner'>
+<div class='top'>
+<h5>Gary Sheng</h5>
+</div>
+<div class='bottom'>
+<div class='btn'>View Site</div>
+</div>
+</div>
+</div>
+<img alt="Gary Sheng" src="http://uploads.striking.ly/page/images/gallery/gary-sheng.jpg" />
+</a>
+</div>
+<div class='image-title'>
+<h6 class='caps'>Gary Sheng</h6>
+</div>
+</div>
+<div class='center columns eight ib no-float' style='margin:7px;'>
+<div class='image-container'>
+<a href="/s/pages/template_preview?template=comogomo" class="template-preview-button btn" style="display:none;">View Site Template</a>
+<a class='image view-site-btn' href='http://www.strikingly.com/comogomo' target='_blank'>
+<div class='image-overlay'>
+<div class='image-overlay-bottom'></div>
+<div class='image-overlay-inner'>
+<div class='top'>
+<h5>Comogomo Concerts</h5>
+</div>
+<div class='bottom'>
+<div class='btn'>View Site</div>
+</div>
+</div>
+</div>
+<img alt="Comogomo Concerts" src="http://uploads.striking.ly/page/images/gallery/comogomo.jpg" />
+</a>
+</div>
+<div class='image-title'>
+<h6 class='caps'>Comogomo Concerts</h6>
+</div>
+</div>
+<div class='center columns ib no-float third' style='margin:7px;'>
+<div class='image-container'>
+<a href="/s/pages/template_preview?template=msan" class="template-preview-button btn" style="display:none;">View Site Template</a>
+<a class='image view-site-btn' href='http://www.strikingly.com/msan' target='_blank'>
+<div class='image-overlay'>
+<div class='image-overlay-bottom'></div>
+<div class='image-overlay-inner'>
+<div class='top'>
+<h5>Muslim Student Network (Stanford)</h5>
+</div>
+<div class='bottom'>
+<div class='btn'>View Site</div>
+</div>
+</div>
+</div>
+<img alt="Muslim Student Network (Stanford)" src="http://uploads.striking.ly/page/images/gallery/msan.jpg" />
+</a>
+</div>
+<div class='image-title'>
+<h6 class='caps'>Muslim Student Network (Stanford)</h6>
+</div>
+</div>
+<div class='center columns ib no-float third' style='margin:7px;'>
+<div class='image-container'>
+<a href="/s/pages/template_preview?template=espree" class="template-preview-button btn" style="display:none;">View Site Template</a>
+<a class='image view-site-btn' href='http://www.strikingly.com/espree' target='_blank'>
+<div class='image-overlay'>
+<div class='image-overlay-bottom'></div>
+<div class='image-overlay-inner'>
+<div class='top'>
+<h5>Date Espree?</h5>
+</div>
+<div class='bottom'>
+<div class='btn'>View Site</div>
+</div>
+</div>
+</div>
+<img alt="Date Espree?" src="http://uploads.striking.ly/page/images/gallery/espree.jpg" />
+</a>
+</div>
+<div class='image-title'>
+<h6 class='caps'>Date Espree?</h6>
+</div>
+</div>
+<div class='center columns ib no-float third' style='margin:7px;'>
+<div class='image-container'>
+<a href="/s/pages/template_preview?template=nextthingnow" class="template-preview-button btn" style="display:none;">View Site Template</a>
+<a class='image view-site-btn' href='http://nextthingnow.co/' target='_blank'>
+<div class='image-overlay'>
+<div class='image-overlay-bottom'></div>
+<div class='image-overlay-inner'>
+<div class='top'>
+<h5>Next Thing Now 2013</h5>
+</div>
+<div class='bottom'>
+<div class='btn'>View Site</div>
+</div>
+</div>
+</div>
+<img alt="Next Thing Now 2013" src="http://uploads.striking.ly/page/images/gallery/next-thing-now.jpg" />
+</a>
+</div>
+<div class='image-title'>
+<h6 class='caps'>Next Thing Now 2013</h6>
+</div>
+</div>
+<div class='center columns eight ib no-float' style='margin:7px;'>
+<div class='image-container'>
+<a href="/s/pages/template_preview?template=site32498-1364364822" class="template-preview-button btn" style="display:none;">View Site Template</a>
+<a class='image view-site-btn' href='http://ruhansnyders.com/' target='_blank'>
+<div class='image-overlay'>
+<div class='image-overlay-bottom'></div>
+<div class='image-overlay-inner'>
+<div class='top'>
+<h5>Ruhan Snyders Photography</h5>
+</div>
+<div class='bottom'>
+<div class='btn'>View Site</div>
+</div>
+</div>
+</div>
+<img alt="Ruhan Snyders Photography" src="http://uploads.striking.ly/page/images/gallery/ruhan-snyders.jpg" />
+</a>
+</div>
+<div class='image-title'>
+<h6 class='caps'>Ruhan Snyders Photography</h6>
+</div>
+</div>
+<div class='center columns eight ib no-float' style='margin:7px;'>
+<div class='image-container'>
+<a href="/s/pages/template_preview?template=2024" class="template-preview-button btn" style="display:none;">View Site Template</a>
+<a class='image view-site-btn' href='http://www.strikingly.com/2024' target='_blank'>
+<div class='image-overlay'>
+<div class='image-overlay-bottom'></div>
+<div class='image-overlay-inner'>
+<div class='top'>
+<h5>The Future of Advertising</h5>
+</div>
+<div class='bottom'>
+<div class='btn'>View Site</div>
+</div>
+</div>
+</div>
+<img alt="The Future of Advertising" src="http://uploads.striking.ly/page/images/gallery/2024.jpg" />
+</a>
+</div>
+<div class='image-title'>
+<h6 class='caps'>The Future of Advertising</h6>
+</div>
+</div>
+<div class='center columns ib no-float third' style='margin:7px;'>
+<div class='image-container'>
+<a href="/s/pages/template_preview?template=teejay" class="template-preview-button btn" style="display:none;">View Site Template</a>
+<a class='image view-site-btn' href='http://www.strikingly.com/teejay' target='_blank'>
+<div class='image-overlay'>
+<div class='image-overlay-bottom'></div>
+<div class='image-overlay-inner'>
+<div class='top'>
+<h5>Teejay Art</h5>
+</div>
+<div class='bottom'>
+<div class='btn'>View Site</div>
+</div>
+</div>
+</div>
+<img alt="Teejay Art" src="http://uploads.striking.ly/page/images/gallery/teejay.jpg" />
+</a>
+</div>
+<div class='image-title'>
+<h6 class='caps'>Teejay Art</h6>
+</div>
+</div>
+<div class='center columns ib no-float third' style='margin:7px;'>
+<div class='image-container'>
+<a href="/s/pages/template_preview?template=conceptmonster" class="template-preview-button btn" style="display:none;">View Site Template</a>
+<a class='image view-site-btn' href='http://www.conceptmonster.net/' target='_blank'>
+<div class='image-overlay'>
+<div class='image-overlay-bottom'></div>
+<div class='image-overlay-inner'>
+<div class='top'>
+<h5>Alex Ruiz's Portfolio</h5>
+</div>
+<div class='bottom'>
+<div class='btn'>View Site</div>
+</div>
+</div>
+</div>
+<img alt="Alex Ruiz&#x27;s Portfolio" src="http://uploads.striking.ly/page/images/gallery/concept-monster.jpg" />
+</a>
+</div>
+<div class='image-title'>
+<h6 class='caps'>Alex Ruiz's Portfolio</h6>
+</div>
+</div>
+<div class='center columns ib no-float third' style='margin:7px;'>
+<div class='image-container'>
+<a href="/s/pages/template_preview?template=site39360-1373218936" class="template-preview-button btn" style="display:none;">View Site Template</a>
+<a class='image view-site-btn' href='http://landing.hirefrederick.com/' target='_blank'>
+<div class='image-overlay'>
+<div class='image-overlay-bottom'></div>
+<div class='image-overlay-inner'>
+<div class='top'>
+<h5>Hire Frederick</h5>
+</div>
+<div class='bottom'>
+<div class='btn'>View Site</div>
+</div>
+</div>
+</div>
+<img alt="Hire Frederick" src="http://uploads.striking.ly/page/images/gallery/frederick.jpg" />
+</a>
+</div>
+<div class='image-title'>
+<h6 class='caps'>Hire Frederick</h6>
+</div>
+</div>
+<div class='center columns eight ib no-float' style='margin:7px;'>
+<div class='image-container'>
+<a href="/s/pages/template_preview?template=anamericaninstockholm" class="template-preview-button btn" style="display:none;">View Site Template</a>
+<a class='image view-site-btn' href='http://www.strikingly.com/anamericaninstockholm' target='_blank'>
+<div class='image-overlay'>
+<div class='image-overlay-bottom'></div>
+<div class='image-overlay-inner'>
+<div class='top'>
+<h5>Meet you in Stockholm.</h5>
+</div>
+<div class='bottom'>
+<div class='btn'>View Site</div>
+</div>
+</div>
+</div>
+<img alt="Meet you in Stockholm." src="http://uploads.striking.ly/page/images/gallery/stockholm.jpg" />
+</a>
+</div>
+<div class='image-title'>
+<h6 class='caps'>Meet you in Stockholm.</h6>
+</div>
+</div>
+<div class='center columns eight ib no-float' style='margin:7px;'>
+<div class='image-container'>
+<a href="/s/pages/template_preview?template=natecrashman" class="template-preview-button btn" style="display:none;">View Site Template</a>
+<a class='image view-site-btn' href='http://gomangoband.com/' target='_blank'>
+<div class='image-overlay'>
+<div class='image-overlay-bottom'></div>
+<div class='image-overlay-inner'>
+<div class='top'>
+<h5>Go Man Go Band</h5>
+</div>
+<div class='bottom'>
+<div class='btn'>View Site</div>
+</div>
+</div>
+</div>
+<img alt="Go Man Go Band" src="http://uploads.striking.ly/page/images/gallery/mango.jpg" />
+</a>
+</div>
+<div class='image-title'>
+<h6 class='caps'>Go Man Go Band</h6>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='section'>
+<div class='inner skinny'>
+<div class='container center'>
+<div class='sixteen columns'>
+<h5>Featured in</h5>
+<br>
+<a href='http://www.nytimes.com/2013/05/05/magazine/y-combinator-silicon-valleys-start-up-machine.html?pagewanted=all&amp;_r=0' target='_blank'>
+<img alt="Nyt" src="//assets.strikingly.com/assets/landing2/nyt-d29c9fc4cc6366f10a33abec1d8f179c.png" style="height:42px;" />
+</a>
+&nbsp;
+<a href='http://www.forbes.com/sites/morganhartley/2013/03/19/how-a-y-combinator-startup-is-born-the-story-of-strikingly/' target='_blank'>
+<img alt="Forbes" src="//assets.strikingly.com/assets/landing2/forbes-a2bc8db9d47ccad9b3a19f304029df26.png" style="height:42px;" />
+</a>
+&nbsp;
+<a href='http://www.techcrunch.com/2013/02/13/strikingly/' target='_blank'>
+<img alt="Tc" src="//assets.strikingly.com/assets/landing2/tc-956cd79cef842e68fdfcc9ffc0245932.png" style="height:42px;" />
+</a>
+&nbsp;
+<a href='http://www.lifehacker.com/5989963/strikingly-creates-simple-beautiful-web-sites-in-minutes' target='_blank'>
+<img alt="Lifehacker" src="//assets.strikingly.com/assets/landing2/lifehacker-023e6626aa411fc250df47762c7f6ecf.png" style="height:42px;" />
+</a>
+&nbsp;
+<a href='http://www.thenextweb.com/insider/2013/03/14/y-combinator-backed-strikingly-wants-to-help-you-build-a-simple-beautiful-mobile-website/?fromcat=all' target='_blank'>
+<img alt="Tnw" src="//assets.strikingly.com/assets/landing2/tnw-a6cd2eeeedb796849a902e65849acd0c.png" style="height:42px;" />
+</a>
+&nbsp;
+<a href='http://bluesky.chicagotribune.com/originals/chi-strikingly-david-chen-bsi-20131127,0,0.story' target='_blank'>
+<img alt="Strikingly builds mobile sites in 10 minutes and is trying to get faster" src="//assets.strikingly.com/assets/landing2/tribune-0d5486d09d66e623776a101ec9864271.png" style="height:42px;" />
+</a>
+&nbsp;
+<a href='http://www.usatoday.com/story/tech/2013/09/29/personal-website-free-strikingly-photos/2875731/' target='_blank'>
+<img alt="TECH NOW: What to put on your personal website" src="//assets.strikingly.com/assets/landing2/usa-today-b453169b61350cc09f3dad69dd801993.png" style="height:42px;" />
+</a>
+&nbsp;
+<a href='http://www.inc.com/issie-lapowsky/4-ways-screwing-up-website.html?cid=sf01001' target='_blank'>
+<img alt="4 Mistakes You&#x27;re Probably Making on Your Website" src="//assets.strikingly.com/assets/landing2/inc-9834746b2a4a49c3f5a397c670c0293d.png" style="height:42px;" />
+</a>
+&nbsp;
+<br>
+</div>
+</div>
+</div>
+</div>
+<div class='dark lazy section' data-background='//assets.strikingly.com/assets/landing2/dark-bg-6f6ee8e4cfff4b4e99cb60347e7652cb.png'>
+<div class='fade inner lazy' data-background='//assets.strikingly.com/assets/fadebg-871cb3a50c43320af56850688231495a.png'>
+<div class='container center'>
+<div class='sixteen columns'>
+<br>
+<br>
+<br>
+<div class='center'><img alt="Strikingly" src="//assets.strikingly.com/assets/landing2/logo-small-big-dfde19c3011985589a3e78b2f8c4db8f.png" style="height:101px" /></div>
+</div>
+<div class='three columns right-align offset-three'>
+<br>
+<h6>
+The Easiest<br />Editor Possible
+</h6>
+<p class='small'>
+Absolutely no code or design experience needed. Click anything to edit, and publish instantly. 
+</p>
+</div>
+<div class='four columns center'><img alt="Kip-devices" src="//assets.strikingly.com/assets/landing2/kip-devices-d10b005684b84e571b258b71fd75503a.png" /></div>
+<div class='three columns left-align'>
+<br>
+<h6>
+Beautiful<br />Mobile Sites
+</h6>
+<p class='small'>Our responsive templates look great on any device, automatically. Be mobile-ready with no extra effort!</p>
+</div>
+<div class='sixteen columns'>
+<br>
+<br>
+<br>
+<h4>Gorgeous mobile-optimized sites in minutes.</h4>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id='fb-root'></div>
+
+<script src="//assets.strikingly.com/assets/landing/signup-2ef5f593147848c7433a2b35b510b5da.js" type="text/javascript"></script>
+<script phantom='keep' type='text/javascript'>
+(function() {
+var gd = document.createElement('script'); gd.type = 'text/javascript'; gd.async = true;
+gd.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'd1lm7kd3bd3yo9.cloudfront.net/grepdata.min.js?v=1';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gd, s);
+})();
+</script>
+<script type='text/javascript'>
+UserVoice = window.UserVoice || [];
+UserVoice.push(['setCustomFields', $S.user_meta || {}]);
+var uvOptions = {};
+(function() {
+var uv = document.createElement('script'); uv.type = 'text/javascript'; uv.async = true;
+uv.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'widget.uservoice.com/Zlewwt7OVhHYrs5pjSwoiA.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(uv, s);
+})();
+UserVoice.push(['showTab', 'classic_widget', {
+mode: 'support',
+primary_color: '#555588',
+link_color: '#007dbf',
+tab_label: 'Feedback & Support',
+tab_color: '#cc6d00',
+tab_position: 'bottom-right',
+tab_inverted: false
+}]);
+</script>
+<script type='text/javascript'>
+I18n.defaultLocale = "en";
+I18n.locale = "en";
+I18n.fallbacks = true;
+I18n.missingTranslation = function() {
+var message = '[missing "' + this.currentLocale()
+, count = arguments.length
+;
+for (var i = 0; i < count; i++) {
+message += "." + arguments[i];
+}
+message += '" translation]';
+return message;
+};
+_errs.meta = $S.user_meta || {} // errorception
+</script></body>
+</html>
