@@ -1,0 +1,144 @@
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>coopist</title>
+	<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="../bootstrap/css/bootstrap-responsive.css"/>
+	<link rel="stylesheet" href="../css/home.css"/>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../bootstrap/js/bootstrap-dropdown.js"></script>
+    <script type="text/javascript" src="http://www.google.com/jsapi">
+    </script>
+
+	<script type="text/javascript" src="http://word-cumulus-goog-vis.googlecode.com/svn/trunk/wordcumulus.js">
+	</script>
+
+	<script type="text/javascript" src="http://word-cumulus-goog-vis.googlecode.com/svn/trunk/swfobject.js">
+	</script>
+
+	<script type="text/javascript">
+		// JS snippets adapted from:
+		//    * https://github.com/ptwobrussell/Mining-the-Social-Web
+		//$( document ).ready(function() {
+	google.load("visualization", "1");
+
+	// Set callback to run when API is loaded
+	google.setOnLoadCallback(drawVisualization);
+
+	// Called when the Visualization API is loaded.
+	function drawVisualization() {
+
+		// Create and populate a data table.
+		var data = new google.visualization.DataTable();
+		data.addColumn('string', 'Tag');
+		data.addColumn('string', 'URL');
+		data.addColumn('number', 'Font size');
+
+		//Define an array of 3-part tuples below
+		//We're substituting them in via Python so there's a placeholder
+		var json_data = {{tag}};
+
+		data.addRows(json_data.length);
+		for (var i = 0; i < json_data.length; i++) {
+			data.setCell(i, 0, json_data[i][0]); // Tag
+			data.setCell(i, 1, json_data[i][1]); // URL for tag
+			data.setCell(i, 2, 2+2.5*json_data[i][2]); // Font size for tag
+		}
+
+		// Instantiate our table object.
+		var vis = new gviz_word_cumulus.WordCumulus(document.getElementById('tagcloud'));
+
+		// Draw our table with the data we created locally.
+		vis.draw(data, {text_color: '#00ff00', speed: 50, width:600, height:600});
+	}
+		//});
+	</script>
+</head>
+
+<body>
+	<div class="container">
+		<div class="row-fluid">
+			<div class="span12">
+				<h1>
+					{{title}}
+                </h1>
+			</div>
+		</div>
+		<div class="row-fluid">
+			<div class="span12">
+				<ul class="nav nav-tabs mynav">
+					<li><a href="#about">About</a></li>
+					<li><a class="active" href="#recent">Recent Messages</a></li>
+					<li><a href="#wall">Supporters</a></li>
+					<li><a href="#tag">Concerns</a></li>
+					<li><a href="http://coopist.org"> Homepage|-> </a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="row-fluid" id="about">
+			<div class="span12">
+				<h2>About This Project</h2>
+				{{description}}
+			</div>
+		</div>
+
+		<div class="row-fluid" id="recent">
+			<div class="span12">
+				<h2>Recent messages</h2>
+				Recent tweets from coopists:
+				{%for r in recent%}
+				<div class="row-fluid">
+					<div class="span1">
+						<a href="http://twitter.com/{{r['user']['screen_name']}}">
+							<img src="{{r['user']['profile_image_url']}}"/>
+						</a>
+					</div>
+					<div>
+						<a href="http://twitter.com/{{r['user']['screen_name']}}">
+						@{{r['user']['screen_name']}}
+						</a>
+						<small> {{r['created_at']}} </small>
+						<br />
+						{{r['text']}}
+					</div>
+				</div>
+				{%endfor%}
+			</div>
+		</div>
+
+		<div class="row-fluid" id="wall">
+			<div class="span12">
+				<h2> People who supports this project </h2>
+				<div class="row-fluid">
+					Following coopists are supporting our movement!
+				</div>
+				<div class="row-fluid">
+					{% for w in wall: %}
+					<a href="http://twitter.com/{{w[1]}}"><img src="{{w[0]}}" /> </a>
+					{% endfor %}
+				</div>
+			</div>
+        </div>
+
+		<div class="row-fluid" id="tag">
+			<div class="span12">
+				<h2>Coopist in this project concerns</h2>
+				Coopists concern most:
+			</div>
+			<div class="span12">
+				<div id="tagcloud"></div>
+			</div>
+        </div>
+
+		<div class="row-fluid" id="tag">
+			<div class="span12">
+				<h2>Join</h2>
+				Interested in this project?
+				Leave your words with hash tag {{hash_tag}}
+			</div>
+        </div>
+	</div>
+</body>
+
+</html>

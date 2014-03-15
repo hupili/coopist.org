@@ -7,7 +7,7 @@ import sys
 import sh
 
 def render_one(project):
-    dir_root = '/var/www/'
+    dir_root = 'www/'
     dir_project = path.join(dir_root, project)
     sh.mkdir('-p', dir_project)
     fn_template = path.join(dir_root, 'project.tpl.html')
