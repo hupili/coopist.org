@@ -27,6 +27,8 @@ See `gh-pages` branch for the generated pages.
 
 No web framework is used -- It's a "hackathon" anyway..
 
+Run `auto.sh` as cron job.
+
 Caveats
 -------
 
@@ -36,6 +38,8 @@ Caveats
    * In case coopist.org expires,
    checkout the alternative GH-Pages link:
    <http://project.hupili.net/coopist.org/>
+   * Python dependencies are not checked. Just run the code and `pip install` anything that is missing.
+   We should only rely on a few things `snsapi`, `pymongo`, `jinja2`, etc.
 
 License
 -------
