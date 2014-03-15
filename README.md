@@ -1,7 +1,7 @@
 coopist.org
 ===========
 
-Archive of http://coopist.org
+**Archive** of <http://coopist.org>
 
 The product of [SWHK2013](http://hongkong.startupweekend.org/)
 
@@ -26,6 +26,16 @@ The user-facing part is purely static.
 See `gh-pages` branch for the generated pages.
 
 No web framework is used -- It's a "hackathon" anyway..
+
+Caveats
+-------
+
+   * The source repo is not maintained.
+   This is just an archive for those who are interested in the codes behind.
+   * `master` and `gh-pages` contain different stuffs.
+   * In case coopist.org expires,
+   checkout the alternative GH-Pages link:
+   <http://project.hupili.net/coopist.org/>
 
 License
 -------
