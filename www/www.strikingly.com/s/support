@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en" class="ltr">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta charset="utf-8">
+  <title>Strikingly&#39;s knowledgebase!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta content="authenticity_token" name="csrf-param" />
+<meta content="dNcOE0g/UXnEF120gdy3+4PgUAVYzUX8G635sX3cQ9A=" name="csrf-token" />
+  <link rel="P3Pv1" href="/w3c/p3p.xml">
+
+    <link rel="canonical" href="http://support.strikingly.com/" />
+
+    <script type="text/javascript">
+    (function(window) {
+      var methods = ['log', 'dir', 'trace'];
+      
+      if (typeof window.console === 'undefined') {
+        window.console = {};
+      }
+      
+      for (var i in methods) {
+        if (!(methods[i] in window.console)) {          
+          window.console[methods[i]] = function() {};
+        }
+      }
+      
+    }(window));    
+  </script>
+
+  <script>
+    window.UserVoice || (window.UserVoice = []);
+  </script>
+
+  
+
+  <link href="//cdn.uservoice.com/pkg/clients/site2-f741725be586c525a5ff0949499b4838.css" media="all" rel="stylesheet" />
+
+
+  <!--[if lt IE 7]>
+    <link href="//cdn.uservoice.com/pkg/clients/site2/ie-f30257d2b4b3093376d0b6aa6f5d4780.css" media="screen" rel="stylesheet" />
+  <![endif]-->
+
+  <!--[if lt IE 9]>
+    <script src="//cdn.uservoice.com/pkg/clients/site2/lt_IE_9-1d78b227886e40a052886b1427a5d72c.js"></script>
+  <![endif]-->
+
+    <style type="text/css">
+  
+  /*
+  -----------------------------------------------------------
+    Link color
+  -----------------------------------------------------------
+  */
+  
+  .uvCustomLink-color,
+  a,
+  .uvHelp,
+  .uvTabSelect,
+  .uvTab-dropdown .uvFieldPlaceholder,
+  .uvModule-session .vcard .uvRememberMe a,
+  .uvBreadcrumbs a,
+  .uvStyle-linkArrow {
+    color: #007DBF;
+  }
+  
+  .uvCustomLink-background,
+  .uvTab-selected,
+  .uvTab-selected .uvFieldSelect,
+  .uvPagination .current {
+    background-color: #007DBF;
+  }
+  
+  /*
+  -----------------------------------------------------------
+    Primary color
+  -----------------------------------------------------------
+  */
+  
+  .uvCustomPrimary-color {
+    color: #6F675E;
+  }
+  
+  .uvCustomPrimary-background,
+  .uvUserBadgeLabel {
+    background-color: #6F675E;
+  }
+  
+  /*
+  -----------------------------------------------------------
+    Background color
+  -----------------------------------------------------------
+  */
+  
+  .uvCustomBackground-color {
+    color: #37375a;
+  }
+  
+  .uvCustomBackground-background,
+  .uvMasthead {
+    background-color: #37375a;
+  }
+  
+  /*
+  -----------------------------------------------------------
+    Status colors
+  -----------------------------------------------------------
+  */
+  
+  .uvStyle-status-under-review {
+    background-color: #999999;
+    color: #FFF;
+  }
+  .uvStyle-status-planned {
+    background-color: #F0BA00;
+    color: #FFF;
+  }
+  .uvStyle-status-started {
+    background-color: #6FBC00;
+    color: #FFF;
+  }
+  .uvStyle-status-completed {
+    background-color: #7D7EDF;
+    color: #FFF;
+  }
+  .uvStyle-status-declined {
+    background-color: #BBBBBB;
+    color: #FFF;
+  }
+</style>
+
+
+    
+
+
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  
+  // UserVoice Profile
+  _gaq.push(['_setAccount', 'UA-3735534-21']);
+  _gaq.push(['_setDomainName', '.strikingly.com']);
+  // Do this to comply with some privacy policies
+  _gaq.push(['_gat._anonymizeIp']);
+  
+    var clientIdentifier = "Site";
+    _gaq.push(['_setCustomVar', 1, 'Client', clientIdentifier, 3]);
+  
+    _gaq.push(['_trackPageview']);
+  
+  // Custom Profile
+  
+    _gaq.push(function() {
+        // create the second async tracker
+        _gaq._createAsyncTracker('UA-3735534-21', 'uvTracker');
+    });
+    _gaq.push(['uvTracker._setAccount', 'UA-25124444-4']);
+    _gaq.push(['uvTracker._setCustomVar', 1, 'Client', clientIdentifier, 3]);
+    _gaq.push(['_setDomainName', 'strikingly.com']);
+    _gaq.push(['_gat._anonymizeIp']);
+
+      _gaq.push(['uvTracker._trackPageview']);
+  
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  
+  function trackEvent(name, label) {
+    if (label == null) {
+      label = "Site";
+    }
+    _gaq.push(['_trackEvent', "UserVoice", name, label]);
+      _gaq.push(['uvTracker._trackEvent', "UserVoice", name, label]);
+  }
+  
+</script>
+</head>
+
+<body class="uv-primaryColor-dark uv-locale-en uv-direction-ltr uv-no-user uv-home-page">
+  <div id="fb-root"></div>
+  <div class="uvPageContainer">
+
+      <header class="uvContainer uvMasthead ">
+  <div class="uvRow">
+    <div class="uvCol-12">
+      <div class="uvMastheadWrapper">
+        
+          <a class="uvMastheadHomeLink" href="/" title="Strikingly&#39;s knowledgebase!">
+            <img class="uvMastheadLogo" src="http://s3.amazonaws.com/uploads.uservoice.com/logo/design_setting/179484/original/strikingly-light-transparent-small.png?1362119986" alt="Strikingly">
+          </a>
+        
+      </div>
+    </div>
+  </div>
+</header>
+
+    
+
+
+
+
+  <div class="uvContainer uvBody">
+
+  <div class="uvRow">
+    
+    
+    
+    <div class="uvCol-8" data-ajaxTarget="homepage-content">
+      
+      <article>
+        <header class="uvPageHeader">
+          <h1 class="uvPageTitle uvCustomPrimary-color">Strikingly&#39;s knowledgebase!</h1>
+        </header>
+      </article>
+
+      <!-- BEGIN site welcome message  -->
+      
+        <div class="uvModule uvModule-message typeset">
+          For any ideas or questions not answered here, click "contact support" (or the question mark while in the editor.)&nbsp;Free free to follow up with us if you don't hear back in 24 hours!<br><br>Are you sure you're done? <a href="http://support.strikingly.com/knowledgebase/articles/271193" rel="nofollow">Here's our pre-publish checklist</a>!<br><br>.
+        </div>
+      
+      <!-- END  -->
+      
+      
+
+      <!-- BEGIN knowledge base module  -->
+      
+        <div class="uvModule uvModule-knowledgebase">
+          <header class="uvModuleHeader">
+            <h2 class="uvModuleTitle uvCustomPrimary-color">
+              <a href="/knowledgebase">Knowledge Base</a>
+            </h2>
+          </header>
+          <section class="uvModuleSection uvModuleSection-topics">
+            <ol class="uvKbTopics">
+              
+                
+                  
+                    <li class="uvKbTopic uvKbTopic-29081">
+                      <h2 class="uvKbTopicTitle uvCustomPrimary-color"><a href="/knowledgebase/topics/29081-content-design">Content &amp; Design&nbsp;<span class="uvStyle-linkArrow">&#8594;</span></a></h2>
+                      <ol class="uvList uvList-articles uvList-faqs">
+                        
+                          <li class="uvListItem uvListItem-article-175876">
+                            <a href="/knowledgebase/articles/175876-background-sizes-settings">Background Sizes &amp; Settings</a>
+                          </li>
+                        
+                          <li class="uvListItem uvListItem-article-179738">
+                            <a href="/knowledgebase/articles/179738-contact-sign-up-form">Contact / Sign up Form</a>
+                          </li>
+                        
+                          <li class="uvListItem uvListItem-article-176613">
+                            <a href="/knowledgebase/articles/176613-upload-display-pdf">Upload &amp; Display PDF</a>
+                          </li>
+                        
+                          <li class="uvListItem uvListItem-article-175899">
+                            <a href="/knowledgebase/articles/175899-add-video">Add Video</a>
+                          </li>
+                        
+                          <li class="uvListItem uvListItem-article-173570">
+                            <a href="/knowledgebase/articles/173570-social-media-email-icons">Social Media &amp; Email Icons</a>
+                          </li>
+                        
+                      </ol>
+                      
+                        <div>
+                          <a href="/knowledgebase/topics/29081-content-design" class="uvListMore" title="View all articles in Content &amp; Design">15 articles&nbsp;<span class="uvStyle-linkArrow">&#8594;</span></a>
+                        </div>
+                      
+                    </li>
+                  
+                
+                  
+                    <li class="uvKbTopic uvKbTopic-45288">
+                      <h2 class="uvKbTopicTitle uvCustomPrimary-color"><a href="/knowledgebase/topics/45288-error-messages-issue-faqs">Error Messages &amp; Issue FAQs&nbsp;<span class="uvStyle-linkArrow">&#8594;</span></a></h2>
+                      <ol class="uvList uvList-articles uvList-faqs">
+                        
+                          <li class="uvListItem uvListItem-article-247528">
+                            <a href="/knowledgebase/articles/247528--heroku-no-app-found">&quot;Heroku: No App Found&quot;</a>
+                          </li>
+                        
+                          <li class="uvListItem uvListItem-article-238181">
+                            <a href="/knowledgebase/articles/238181--domain-is-not-valid-or-already-taken">&quot;Domain is not valid or already taken.&quot;</a>
+                          </li>
+                        
+                          <li class="uvListItem uvListItem-article-209336">
+                            <a href="/knowledgebase/articles/209336-google-has-the-wrong-url-or-no-url-at-all">Google has the wrong URL or no URL at all!</a>
+                          </li>
+                        
+                          <li class="uvListItem uvListItem-article-239283">
+                            <a href="/knowledgebase/articles/239283-website-looks-strange-on-mobile">Website looks strange on mobile!</a>
+                          </li>
+                        
+                          <li class="uvListItem uvListItem-article-175484">
+                            <a href="/knowledgebase/articles/175484--framing-is-not-allowed-with-free-account">&quot;Framing is not allowed with free account.&quot;</a>
+                          </li>
+                        
+                      </ol>
+                      
+                        <div>
+                          <a href="/knowledgebase/topics/45288-error-messages-issue-faqs" class="uvListMore" title="View all articles in Error Messages &amp; Issue FAQs">11 articles&nbsp;<span class="uvStyle-linkArrow">&#8594;</span></a>
+                        </div>
+                      
+                    </li>
+                  
+                
+                  
+                    <li class="uvKbTopic uvKbTopic-28952">
+                      <h2 class="uvKbTopicTitle uvCustomPrimary-color"><a href="/knowledgebase/topics/28952-connecting-domains-you-own">Connecting Domains You Own&nbsp;<span class="uvStyle-linkArrow">&#8594;</span></a></h2>
+                      <ol class="uvList uvList-articles uvList-faqs">
+                        
+                          <li class="uvListItem uvListItem-article-192451">
+                            <a href="/knowledgebase/articles/192451-connect-custom-domain">Connect Custom Domain!</a>
+                          </li>
+                        
+                          <li class="uvListItem uvListItem-article-273442">
+                            <a href="/knowledgebase/articles/273442-why-isn-t-my-domain-working">Why isn’t my domain working?</a>
+                          </li>
+                        
+                          <li class="uvListItem uvListItem-article-251629">
+                            <a href="/knowledgebase/articles/251629-%E5%90%8D%E5%89%8D-com-%E3%83%89%E3%83%A1%E3%82%A4%E3%83%B3%E3%82%92%E6%8E%A5%E7%B6%9A%E3%81%99%E3%82%8B">名前.com ドメインを接続する</a>
+                          </li>
+                        
+                          <li class="uvListItem uvListItem-article-192491">
+                            <a href="/knowledgebase/articles/192491-generic-domain-setup-tutorial">Generic Domain Setup Tutorial</a>
+                          </li>
+                        
+                          <li class="uvListItem uvListItem-article-198164">
+                            <a href="/knowledgebase/articles/198164-generic-subdomain-setup-tutorial">Generic Subdomain Setup Tutorial</a>
+                          </li>
+                        
+                      </ol>
+                      
+                        <div>
+                          <a href="/knowledgebase/topics/28952-connecting-domains-you-own" class="uvListMore" title="View all articles in Connecting Domains You Own">9 articles&nbsp;<span class="uvStyle-linkArrow">&#8594;</span></a>
+                        </div>
+                      
+                    </li>
+                  
+                
+                  
+                    <li class="uvKbTopic uvKbTopic-40286">
+                      <h2 class="uvKbTopicTitle uvCustomPrimary-color"><a href="/knowledgebase/topics/40286-getting-connecting-domains-from-strikingly">Getting &amp; Connecting Domains from Strikingly&nbsp;<span class="uvStyle-linkArrow">&#8594;</span></a></h2>
+                      <ol class="uvList uvList-articles uvList-faqs">
+                        
+                          <li class="uvListItem uvListItem-article-187983">
+                            <a href="/knowledgebase/articles/187983-register-new-domain-or-several">Register New Domain! (or several)</a>
+                          </li>
+                        
+                          <li class="uvListItem uvListItem-article-176996">
+                            <a href="/knowledgebase/articles/176996-custom-domain-emails-send-receive">Custom Domain Emails ( Send &amp; Receive )</a>
+                          </li>
+                        
+                          <li class="uvListItem uvListItem-article-238712">
+                            <a href="/knowledgebase/articles/238712-add-subdomain-strikingly">Add Subdomain (Strikingly)</a>
+                          </li>
+                        
+                          <li class="uvListItem uvListItem-article-273444">
+                            <a href="/knowledgebase/articles/273444-why-isn-t-my-subdomain-working">Why isn&#39;t my subdomain working?</a>
+                          </li>
+                        
+                          <li class="uvListItem uvListItem-article-176621">
+                            <a href="/knowledgebase/articles/176621-leaving-strikingly-export-site">Leaving Strikingly / Export Site</a>
+                          </li>
+                        
+                      </ol>
+                      
+                        <div>
+                          <a href="/knowledgebase/topics/40286-getting-connecting-domains-from-strikingly" class="uvListMore" title="View all articles in Getting &amp; Connecting Domains from Strikingly">6 articles&nbsp;<span class="uvStyle-linkArrow">&#8594;</span></a>
+                        </div>
+                      
+                    </li>
+                  
+                
+                  
+                    <li class="uvKbTopic uvKbTopic-28930">
+                      <h2 class="uvKbTopicTitle uvCustomPrimary-color"><a href="/knowledgebase/topics/28930-app-store-html">App Store &amp; HTML&nbsp;<span class="uvStyle-linkArrow">&#8594;</span></a></h2>
+                      <ol class="uvList uvList-articles uvList-faqs">
+                        
+                          <li class="uvListItem uvListItem-article-199426">
+                            <a href="/knowledgebase/articles/199426-html-section-showcase">HTML Section Showcase!</a>
+                          </li>
+                        
+                          <li class="uvListItem uvListItem-article-264390">
+                            <a href="/knowledgebase/articles/264390-e-commerce-ecwid-paypal-tackthis">E-Commerce (ECWID, Paypal, Tackthis)</a>
+                          </li>
+                        
+                          <li class="uvListItem uvListItem-article-286439">
+                            <a href="/knowledgebase/articles/286439-collect-emails-mailchimp-wufoo">Collect Emails (Mailchimp, Wufoo)</a>
+                          </li>
+                        
+                          <li class="uvListItem uvListItem-article-282865">
+                            <a href="/knowledgebase/articles/282865--render-as-iframe-html-section">&quot;Render as iframe&quot; HTML Section</a>
+                          </li>
+                        
+                          <li class="uvListItem uvListItem-article-287460">
+                            <a href="/knowledgebase/articles/287460-donations-paypal">Donations / Paypal</a>
+                          </li>
+                        
+                      </ol>
+                      
+                        <div>
+                          <a href="/knowledgebase/topics/28930-app-store-html" class="uvListMore" title="View all articles in App Store &amp; HTML">11 articles&nbsp;<span class="uvStyle-linkArrow">&#8594;</span></a>
+                        </div>
+                      
+                    </li>
+                  
+                
+                  
+                    <li class="uvKbTopic uvKbTopic-29003">
+                      <h2 class="uvKbTopicTitle uvCustomPrimary-color"><a href="/knowledgebase/topics/29003-social-media-integration-mobile">Social Media Integration &amp; Mobile&nbsp;<span class="uvStyle-linkArrow">&#8594;</span></a></h2>
+                      <ol class="uvList uvList-articles uvList-faqs">
+                        
+                          <li class="uvListItem uvListItem-article-276848">
+                            <a href="/knowledgebase/articles/276848-social-media-panel-facebook-twitter-google">Social Media Panel (Facebook, Twitter, Google+)</a>
+                          </li>
+                        
+                          <li class="uvListItem uvListItem-article-268025">
+                            <a href="/knowledgebase/articles/268025-for-events-eventbrite-eventnook-peatix">For Events (Eventbrite, Eventnook, Peatix)</a>
+                          </li>
+                        
+                          <li class="uvListItem uvListItem-article-172975">
+                            <a href="/knowledgebase/articles/172975-facebook-image-not-updating">Facebook Image Not Updating</a>
+                          </li>
+                        
+                          <li class="uvListItem uvListItem-article-193887">
+                            <a href="/knowledgebase/articles/193887-remove-related-videos">Remove Related Videos</a>
+                          </li>
+                        
+                          <li class="uvListItem uvListItem-article-276175">
+                            <a href="/knowledgebase/articles/276175-mobile-actions-click-to-call">Mobile Actions / Click-to-call</a>
+                          </li>
+                        
+                      </ol>
+                      
+                        <div>
+                          <a href="/knowledgebase/topics/29003-social-media-integration-mobile" class="uvListMore" title="View all articles in Social Media Integration &amp; Mobile">6 articles&nbsp;<span class="uvStyle-linkArrow">&#8594;</span></a>
+                        </div>
+                      
+                    </li>
+                  
+                
+                  
+                    <li class="uvKbTopic uvKbTopic-29683">
+                      <h2 class="uvKbTopicTitle uvCustomPrimary-color"><a href="/knowledgebase/topics/29683-billing-account">Billing &amp; Account&nbsp;<span class="uvStyle-linkArrow">&#8594;</span></a></h2>
+                      <ol class="uvList uvList-articles uvList-faqs">
+                        
+                          <li class="uvListItem uvListItem-article-298208">
+                            <a href="/knowledgebase/articles/298208-plan-pricing-international-billing-details">Plan Pricing (International) / Billing Details</a>
+                          </li>
+                        
+                          <li class="uvListItem uvListItem-article-287393">
+                            <a href="/knowledgebase/articles/287393-can-t-log-in-lost-account">Can&#39;t Log In / Lost Account</a>
+                          </li>
+                        
+                          <li class="uvListItem uvListItem-article-184395">
+                            <a href="/knowledgebase/articles/184395-more-sites-rewards">More Sites / Rewards</a>
+                          </li>
+                        
+                          <li class="uvListItem uvListItem-article-288867">
+                            <a href="/knowledgebase/articles/288867-unsubscribe-unsub">Unsubscribe / Unsub</a>
+                          </li>
+                        
+                          <li class="uvListItem uvListItem-article-176930">
+                            <a href="/knowledgebase/articles/176930-cancel-account-remove-pro-features">Cancel Account / Remove Pro Features</a>
+                          </li>
+                        
+                      </ol>
+                      
+                        <div>
+                          <a href="/knowledgebase/topics/29683-billing-account" class="uvListMore" title="View all articles in Billing &amp; Account">8 articles&nbsp;<span class="uvStyle-linkArrow">&#8594;</span></a>
+                        </div>
+                      
+                    </li>
+                  
+                
+                  
+                    <li class="uvKbTopic uvKbTopic-29255">
+                      <h2 class="uvKbTopicTitle uvCustomPrimary-color"><a href="/knowledgebase/topics/29255-search-engine-friendliness">Search Engine-Friendliness &nbsp;<span class="uvStyle-linkArrow">&#8594;</span></a></h2>
+                      <ol class="uvList uvList-articles uvList-faqs">
+                        
+                          <li class="uvListItem uvListItem-article-173594">
+                            <a href="/knowledgebase/articles/173594-increase-search-engine-ranking-seo">Increase Search Engine Ranking (SEO)</a>
+                          </li>
+                        
+                          <li class="uvListItem uvListItem-article-276176">
+                            <a href="/knowledgebase/articles/276176-unpublish">Unpublish</a>
+                          </li>
+                        
+                          <li class="uvListItem uvListItem-article-199736">
+                            <a href="/knowledgebase/articles/199736-webmaster-tools-google-sitemap">Webmaster Tools / Google Sitemap</a>
+                          </li>
+                        
+                          <li class="uvListItem uvListItem-article-183630">
+                            <a href="/knowledgebase/articles/183630-hide-remove-from-google-search">Hide &amp; Remove from Google / Search</a>
+                          </li>
+                        
+                          <li class="uvListItem uvListItem-article-231483">
+                            <a href="/knowledgebase/articles/231483-google-analytics-optimize-ly">Google Analytics / Optimize.ly</a>
+                          </li>
+                        
+                      </ol>
+                      
+                        <div>
+                          <a href="/knowledgebase/topics/29255-search-engine-friendliness" class="uvListMore" title="View all articles in Search Engine-Friendliness ">7 articles&nbsp;<span class="uvStyle-linkArrow">&#8594;</span></a>
+                        </div>
+                      
+                    </li>
+                  
+                
+                  
+                    <li class="uvKbTopic uvKbTopic-45646">
+                      <h2 class="uvKbTopicTitle uvCustomPrimary-color"><a href="/knowledgebase/topics/45646-one-page-multi-page">One-Page, Multi-Page&nbsp;<span class="uvStyle-linkArrow">&#8594;</span></a></h2>
+                      <ol class="uvList uvList-articles uvList-faqs">
+                        
+                          <li class="uvListItem uvListItem-article-275413">
+                            <a href="/knowledgebase/articles/275413-multiple-page-site">Multiple Page Site</a>
+                          </li>
+                        
+                          <li class="uvListItem uvListItem-article-279024">
+                            <a href="/knowledgebase/articles/279024-mobile-only-site">Mobile-only Site</a>
+                          </li>
+                        
+                          <li class="uvListItem uvListItem-article-276844">
+                            <a href="/knowledgebase/articles/276844-multi-language-translations">Multi-language / Translations</a>
+                          </li>
+                        
+                          <li class="uvListItem uvListItem-article-279011">
+                            <a href="/knowledgebase/articles/279011-blogging">Blogging</a>
+                          </li>
+                        
+                          <li class="uvListItem uvListItem-article-275410">
+                            <a href="/knowledgebase/articles/275410-one-site-multiple-domains">One Site, Multiple Domains</a>
+                          </li>
+                        
+                      </ol>
+                      
+                    </li>
+                  
+                
+                  
+                    <li class="uvKbTopic uvKbTopic-45843">
+                      <h2 class="uvKbTopicTitle uvCustomPrimary-color"><a href="/knowledgebase/topics/45843-other-design-faqs">Other Design FAQs&nbsp;<span class="uvStyle-linkArrow">&#8594;</span></a></h2>
+                      <ol class="uvList uvList-articles uvList-faqs">
+                        
+                          <li class="uvListItem uvListItem-article-177880">
+                            <a href="/knowledgebase/articles/177880-text-colors-font-size">Text Colors / Font Size</a>
+                          </li>
+                        
+                          <li class="uvListItem uvListItem-article-176921">
+                            <a href="/knowledgebase/articles/176921-add-background">Add Background</a>
+                          </li>
+                        
+                          <li class="uvListItem uvListItem-article-276548">
+                            <a href="/knowledgebase/articles/276548-auto-save">Auto-save</a>
+                          </li>
+                        
+                          <li class="uvListItem uvListItem-article-240259">
+                            <a href="/knowledgebase/articles/240259-remove-extra-text-boxes-spaces">Remove Extra Text Boxes &amp; Spaces</a>
+                          </li>
+                        
+                          <li class="uvListItem uvListItem-article-276179">
+                            <a href="/knowledgebase/articles/276179-add-terms-of-service">Add Terms of Service</a>
+                          </li>
+                        
+                      </ol>
+                      
+                        <div>
+                          <a href="/knowledgebase/topics/45843-other-design-faqs" class="uvListMore" title="View all articles in Other Design FAQs">11 articles&nbsp;<span class="uvStyle-linkArrow">&#8594;</span></a>
+                        </div>
+                      
+                    </li>
+                  
+                
+                  
+                    <li class="uvKbTopic uvKbTopic-32298">
+                      <h2 class="uvKbTopicTitle uvCustomPrimary-color"><a href="/knowledgebase/topics/32298-domain-setup-tutorials-for-specific-registrars">Domain Setup Tutorials for Specific Registrars&nbsp;<span class="uvStyle-linkArrow">&#8594;</span></a></h2>
+                      <ol class="uvList uvList-articles uvList-faqs">
+                        
+                          <li class="uvListItem uvListItem-article-192477">
+                            <a href="/knowledgebase/articles/192477-godaddy">GoDaddy</a>
+                          </li>
+                        
+                          <li class="uvListItem uvListItem-article-193045">
+                            <a href="/knowledgebase/articles/193045-bluehost">Bluehost</a>
+                          </li>
+                        
+                          <li class="uvListItem uvListItem-article-192456">
+                            <a href="/knowledgebase/articles/192456-namecheap">Namecheap</a>
+                          </li>
+                        
+                          <li class="uvListItem uvListItem-article-297592">
+                            <a href="/knowledgebase/articles/297592-1-1">1&amp;1</a>
+                          </li>
+                        
+                          <li class="uvListItem uvListItem-article-331752">
+                            <a href="/knowledgebase/articles/331752-gandi">Gandi</a>
+                          </li>
+                        
+                      </ol>
+                      
+                        <div>
+                          <a href="/knowledgebase/topics/32298-domain-setup-tutorials-for-specific-registrars" class="uvListMore" title="View all articles in Domain Setup Tutorials for Specific Registrars">7 articles&nbsp;<span class="uvStyle-linkArrow">&#8594;</span></a>
+                        </div>
+                      
+                    </li>
+                  
+                
+                  
+                    <li class="uvKbTopic uvKbTopic-30013">
+                      <h2 class="uvKbTopicTitle uvCustomPrimary-color"><a href="/knowledgebase/topics/30013-terms-and-privacy">Terms and Privacy&nbsp;<span class="uvStyle-linkArrow">&#8594;</span></a></h2>
+                      <ol class="uvList uvList-articles uvList-faqs">
+                        
+                          <li class="uvListItem uvListItem-article-179175">
+                            <a href="/knowledgebase/articles/179175-strikingly-s-terms-of-service">Strikingly&#39;s Terms of Service</a>
+                          </li>
+                        
+                          <li class="uvListItem uvListItem-article-179177">
+                            <a href="/knowledgebase/articles/179177-strikingly-s-privacy-policy">Strikingly&#39;s Privacy Policy</a>
+                          </li>
+                        
+                      </ol>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+              
+              
+              <li class="uvKbTopic uvKbTopic-all">
+                <h2 class="uvKbTopicTitle uvCustomPrimary-color"><a href="/knowledgebase/articles/all">All articles&nbsp;<span class="uvStyle-linkArrow">&#8594;</span></a></h2>
+                <ol class="uvList uvList-articles uvList-faqs">
+                  
+                    <li class="uvListItem uvListItem-article-173594">
+                        <a href="/knowledgebase/articles/173594-increase-search-engine-ranking-seo">Increase Search Engine Ranking (SEO)</a>
+                    </li>
+                  
+                    <li class="uvListItem uvListItem-article-175876">
+                        <a href="/knowledgebase/articles/175876-background-sizes-settings">Background Sizes &amp; Settings</a>
+                    </li>
+                  
+                    <li class="uvListItem uvListItem-article-177880">
+                        <a href="/knowledgebase/articles/177880-text-colors-font-size">Text Colors / Font Size</a>
+                    </li>
+                  
+                    <li class="uvListItem uvListItem-article-179175">
+                        <a href="/knowledgebase/articles/179175-strikingly-s-terms-of-service">Strikingly&#39;s Terms of Service</a>
+                    </li>
+                  
+                    <li class="uvListItem uvListItem-article-187983">
+                        <a href="/knowledgebase/articles/187983-register-new-domain-or-several">Register New Domain! (or several)</a>
+                    </li>
+                  
+                </ol>
+                
+                  <a href="/knowledgebase/articles/all" class="uvListMore" title="View all articles">98 articles&nbsp;<span class="uvStyle-linkArrow">&#8594;</span></a>
+                
+              </li>
+            
+            </ol>
+          </section>
+        </div>
+      
+      <!-- END knowledge base module  -->
+
+    </div>
+
+    <div class="uvCol-4 uvSidebar uvCol-last">
+      <div class="uvModule uvModule-session" aria-live="polite" aria-relevant="additions removals">
+  <section class="uvModuleSection uvModuleSection-userbox uvModuleSection-signin">
+      <p class="uvStyle-signin">New and returning users may <a href="/signin">sign in</a></p>
+    <form novalidate class="uvjSigninStandalone">
+      
+<fieldset class="uvSignin uvSignin-prestine uvSignin-default uvFieldset" data-options="{&quot;subclass&quot;:&quot;StandaloneSignin&quot;}"  aria-live="polite" aria-relevant="additions removals" data-subclass='StandaloneSignin'>
+  <legend class="uvSigninLegend">Sign in</legend>
+  <div class="uvSigninMode" style="display:none">prestine</div>
+      <div class="uvField uvField-display_name uvField-first">
+        <label class="uvFieldInner" for="display_name_1">
+          <span class="uvFieldPlaceholder">Your name</span>
+          <input class="uvFieldText" type="text" name="display_name" id="display_name_1" title="Your name" />
+        </label>
+      </div>
+      <div class="uvField uvField-email uvField-first">
+        <label class="uvFieldInner" for="email_1">
+          <span class="uvFieldPlaceholder">Your email address</span>
+          <input class="uvFieldText" type="email" name="email" id="email_1" value="" title="Your email address">
+        </label>
+        <div class="uvFieldEtc uvFieldEtc-unprotected">Check!</div>
+        <div class="uvFieldEtc uvFieldEtc-email_invalid">invalid email</div>
+        <div class="uvFieldEtc uvFieldEtc-thinking">(thinking…)</div>
+        <div class="uvFieldEtc uvFieldEtc-reset">Reset</div>
+        <div class="uvFieldEtc uvFieldEtc-providers">
+          <span class="uvFieldEtcLabel">or sign in with</span>
+          <ul>
+              <li data-provider="facebook"><a href="https://graph.facebook.com/oauth/authorize?client_id=46468144668&amp;redirect_uri=http%3A%2F%2Fauth.uservoice.com%2Ffacebook%2F165837&amp;scope=email&amp;display=popup" tabindex="0" title="Sign in via Facebook"><img class="favicon" src="//cdn.uservoice.com/pkg/shared/favicons/facebook-baf9f8a41ca4ba397abd8d73593ac940.png" alt="facebook" /></a></li>
+              <li data-provider="google"><a href="http://auth.uservoice.com/google/165837" tabindex="0" title="Sign in via Google"><img class="favicon" src="//cdn.uservoice.com/pkg/shared/favicons/google-73e27f2df1ee0b1259fc7d3f04abbdc7.png" alt="google" /></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="uvField uvField-authentication">
+        <ul class="uvFieldEtc uvFieldEtc-providers uvFieldEtc-third_party"></ul>
+        <img alt="Password icon" class="password" src="//cdn.uservoice.com/pkg/shared/favicons/password-fb2771112fb14e2588f5beba6b59fb95.png" />
+        <div class="password">
+          <label class="uvFieldInner" for="password_1">
+            <span class="uvFieldPlaceholder">UserVoice password</span>
+            <input class="uvFieldPassword" type="password" name="password" id="password_1" title="UserVoice password" />
+          </label>
+          <div class="uvFieldEtc uvFieldEtc-password_invalid"></div>
+          <div class="uvFieldEtc uvFieldEtc-forgot_password"><a href="/users/forgot_password" class="uvFieldEtc-password_reset">Forgot password?</a></div>
+          <div class="uvFieldEtc uvFieldEtc-create_password"><a href="/users/forgot_password" class="uvFieldEtc-password_reset">Create a password</a></div>
+        </div>
+        <div style="clear:both;"></div>
+      </div>
+        <div class="uvField uvField-terms_implicit">
+          <span class="uvFieldInner">I agree to the <a href="/tos" rel="external" target="_blank" title="Opens in new window">terms of service</a></span>
+        </div>
+  
+  <div class="uvField uvField-logged_in uvField-first">
+    <span>
+      Signed in as <span class="logged_in_as"></span>
+      (<a href="/logout">Sign out</a>)
+    </span>
+  </div>
+
+  <input type="hidden" name="uninitialized" value="true" />
+</fieldset>
+
+
+      <div class="uvFormFlash uvFormFlash-error">
+  <div class="uvFormFlashMessage"></div>
+  <a class="uvFormFlashClose" href="#close">Close</a>
+</div>
+
+<div class="uvFormFlash uvFormFlash-info">
+  <div class="uvFormFlashMessage"></div>
+  <a class="uvFormFlashClose" href="#close">Close</a>
+</div>
+
+      <div class="submit_region">
+  <button class="uvFieldEtc-submit-button uvStyle-button">Sign in</button>
+  <ul class="button-states-language">
+    <li class="sign-in-button-text">Sign in</li>
+    <li class="sign-up-button-text">Sign up</li>
+  </ul>
+  <button class="uvFieldEtc-cancel-page">Cancel</button>
+</div>
+
+
+    </form>
+  </section>
+</div>
+
+      
+      
+
+
+<div class="uvModule uvModule-mainSidebar">
+  
+  <header class="uvModuleHeader hide" style="position: absolute;">
+    <!-- Header should be present for screenreaders, but hidden, we need an accessible class for this -->
+    <h1 class="uvCustomPrimary-color hidden"><span class="uvModuleTriggerTwirl"></span> Feedback and Knowledge Base</h1>
+    <!-- end -->
+  </header>
+
+  <section class="uvModuleSection uvModuleSection-search">
+    <form action="/api/v1/search?weight_minimum=40">
+      <div class="uvField uvField-search">
+        <label class="uvFieldInner" for="combined_search_sidebar">
+        <!-- this should be a search for knowledgebase and helpdesk. -->
+          <span class="uvFieldPlaceholder">Search</span>
+          <input class="uvFieldText" name="query" type="text" id="combined_search_sidebar">
+                 
+          <script type="text/x-jquery-tmpl" id="uvSearch-template-articles">
+            <h4 class="uvNavListItemSubtitle">${total_articles} {{if total_articles > 1}}articles{{else}}article{{/if}}</h4>
+            <ul class="uvList uvList-searchResults">
+              {{each(i, article) articles}}
+                <li class="uvListItem uvListItem-searchResult" data-search-weight="${article.weight}">
+                  <a href="${article.path}">${article.question}</a>
+                </li>
+              {{/each}}
+            </ul>
+            {{if more_articles}}
+              <p class="uvSearch-more-results"><a href="/search?filter=articles&query=${response_data.query}">More articles &rarr;</a></p>
+            {{/if}}
+          </script>
+          
+          <script type="text/x-jquery-tmpl" id="uvSearch-template-ideas">
+            <h4 class="uvNavListItemSubtitle">${total_suggestions} {{if total_suggestions > 1}}ideas{{else}}idea{{/if}}</h4>
+            <ul class="uvList uvList-searchResults">
+              {{each(i, idea) suggestions}}
+                <li class="uvListItem uvListItem-searchResult" data-search-weight="${idea.weight}">
+                {{if idea.status && idea.status.name}}
+                  <em class="uvStyle-status uvStyle-status-${idea.status.key}" 
+                      title="This idea is ${idea.status.name} ${$.tmplHelpers.toLocalDate(idea.updated_at, '- updated %date%')}">${idea.status.name}</em>
+                {{/if}}
+                  <a href="${idea.path}">
+                    ${idea.title}
+                  </a>
+                </li>
+              {{/each}}
+            </ul>
+            {{if more_suggestions}}
+              <p class="uvSearch-more-results"><a href="/search?filter=ideas&query=${response_data.query}">More ideas &rarr;</a></p>
+            {{/if}}
+          </script>
+          
+          <script type="text/x-jquery-tmpl" id="uvSearch-template-title">
+            {{if searching}}
+              Searching&hellip;
+            {{else}}
+              <a href="/search?filter=merged&query=${query}">Search results</a>
+            {{/if}}
+          </script>
+        </label>
+        <button class="uvFieldButton uvStyle-button" type="submit"><span class="uvFieldButtonImage-sidebar">Search</span></button>
+          <div class="uvFieldEtc uvFieldEtc-thinking">(thinking…)</div>
+          <button type="reset" class="uvFieldEtc uvFieldEtc-reset">Reset</button>
+      </div>
+    </form>
+    <ul class="uvNavList">
+      <li class="uvNavListItem uvNavListItem-search uvSearch-results-container" style="display: none;">
+        <h2 class="uvNavListItemTitle uvSearch-results-title uvCustomPrimary-color">
+          Searching&hellip;
+        </h2>
+        <div id="uvSearch-results-articles" class="uvSearchResults uvSearchResults-articles"></div>
+        <div id="uvSearch-results-ideas" class="uvSearchResults uvSearchResults-ideas"></div>
+        <p class="uvNoResults">No results.</p>
+        <a href="" class="uvSearch-results-clear">Clear search results</a> 
+      </li>
+    </ul>
+  </section>
+  
+  <section class="uvModuleSection">
+    <ul class="uvNavList">
+    
+        <li class="uvNavListItem uvNavListItem-contactus">
+          <h2 class="uvNavListItemTitle">
+              <button type="button" class="uvLink-contactus uvStyle-link uvCustomLink-color">Contact support</button>
+          </h2>
+        </li>
+    
+      
+        <li class="uvNavListItem uvNavListItem-helpdesk">
+        <!-- popular articles in topics box  HELPDESK -->
+          <h2 class="uvNavListItemTitle">
+            <a class="uvLink-knowledgebase" href="/knowledgebase">Knowledge Base</a>
+          </h2>
+            <ul class="uvList uvList-topics">
+                  <li class="uvListItem uvListItem-topic uvListItem-topic-29081">
+                    <a href="/knowledgebase/topics/29081-content-design" title="View all articles in Content &amp; Design">Content &amp; Design</a>&nbsp;<span class="uvStyle-count">15<span class="uvStyle-count-label"> articles</span></span>
+                  </li>
+                  <li class="uvListItem uvListItem-topic uvListItem-topic-45288">
+                    <a href="/knowledgebase/topics/45288-error-messages-issue-faqs" title="View all articles in Error Messages &amp; Issue FAQs">Error Messages &amp; Issue FAQs</a>&nbsp;<span class="uvStyle-count">11<span class="uvStyle-count-label"> articles</span></span>
+                  </li>
+                  <li class="uvListItem uvListItem-topic uvListItem-topic-28952">
+                    <a href="/knowledgebase/topics/28952-connecting-domains-you-own" title="View all articles in Connecting Domains You Own">Connecting Domains You Own</a>&nbsp;<span class="uvStyle-count">9<span class="uvStyle-count-label"> articles</span></span>
+                  </li>
+                  <li class="uvListItem uvListItem-topic uvListItem-topic-40286">
+                    <a href="/knowledgebase/topics/40286-getting-connecting-domains-from-strikingly" title="View all articles in Getting &amp; Connecting Domains from Strikingly">Getting &amp; Connecting Domains from Strikingly</a>&nbsp;<span class="uvStyle-count">6<span class="uvStyle-count-label"> articles</span></span>
+                  </li>
+                  <li class="uvListItem uvListItem-topic uvListItem-topic-28930">
+                    <a href="/knowledgebase/topics/28930-app-store-html" title="View all articles in App Store &amp; HTML">App Store &amp; HTML</a>&nbsp;<span class="uvStyle-count">11<span class="uvStyle-count-label"> articles</span></span>
+                  </li>
+                  <li class="uvListItem uvListItem-topic uvListItem-topic-29003">
+                    <a href="/knowledgebase/topics/29003-social-media-integration-mobile" title="View all articles in Social Media Integration &amp; Mobile">Social Media Integration &amp; Mobile</a>&nbsp;<span class="uvStyle-count">6<span class="uvStyle-count-label"> articles</span></span>
+                  </li>
+                  <li class="uvListItem uvListItem-topic uvListItem-topic-29683">
+                    <a href="/knowledgebase/topics/29683-billing-account" title="View all articles in Billing &amp; Account">Billing &amp; Account</a>&nbsp;<span class="uvStyle-count">8<span class="uvStyle-count-label"> articles</span></span>
+                  </li>
+                  <li class="uvListItem uvListItem-topic uvListItem-topic-29255">
+                    <a href="/knowledgebase/topics/29255-search-engine-friendliness" title="View all articles in Search Engine-Friendliness ">Search Engine-Friendliness </a>&nbsp;<span class="uvStyle-count">7<span class="uvStyle-count-label"> articles</span></span>
+                  </li>
+                  <li class="uvListItem uvListItem-topic uvListItem-topic-45646">
+                    <a href="/knowledgebase/topics/45646-one-page-multi-page" title="View all articles in One-Page, Multi-Page">One-Page, Multi-Page</a>&nbsp;<span class="uvStyle-count">5<span class="uvStyle-count-label"> articles</span></span>
+                  </li>
+                  <li class="uvListItem uvListItem-topic uvListItem-topic-45843">
+                    <a href="/knowledgebase/topics/45843-other-design-faqs" title="View all articles in Other Design FAQs">Other Design FAQs</a>&nbsp;<span class="uvStyle-count">11<span class="uvStyle-count-label"> articles</span></span>
+                  </li>
+                  <li class="uvListItem uvListItem-topic uvListItem-topic-32298">
+                    <a href="/knowledgebase/topics/32298-domain-setup-tutorials-for-specific-registrars" title="View all articles in Domain Setup Tutorials for Specific Registrars">Domain Setup Tutorials for Specific Registrars</a>&nbsp;<span class="uvStyle-count">7<span class="uvStyle-count-label"> articles</span></span>
+                  </li>
+                  <li class="uvListItem uvListItem-topic uvListItem-topic-30013">
+                    <a href="/knowledgebase/topics/30013-terms-and-privacy" title="View all articles in Terms and Privacy">Terms and Privacy</a>&nbsp;<span class="uvStyle-count">2<span class="uvStyle-count-label"> articles</span></span>
+                  </li>
+              <li class="uvListItem uvListItem-topic uvListItem-topic-all ">
+                <a href="/knowledgebase/articles/all">All articles</a>
+              </li>
+            </ul>
+        </li>
+      
+      <li class="uvNavListItem uvNavListItem-home">
+        <h2 class="uvNavListItemTitle">
+          <a class="uvLink-home" href="http://www.strikingly.com">Strikingly</a>
+        </h2>
+      </li>
+      
+    </ul>
+  </section>
+  
+</div>
+
+
+      
+    </div>
+
+  </div>  
+</div>
+
+
+<script type="text/javascript">
+  UserVoice.push(['track', 'view_channel']);
+</script>
+
+
+
+
+      <footer class="uvContainer uvFooter">
+  <div class="uvRow">
+    <div class="uvCol-12">
+      <p>
+        
+          <a href="http://www.strikingly.com">Strikingly</a>
+          <span class="uvStyle-separator"> &middot; </span>
+        
+        <a href="/" class='site-frontpage-link'>Strikingly&#39;s knowledgebase!</a>
+        <span class="uvStyle-separator"> &middot; </span>
+        <a href="/tos">Terms of Service &amp; Privacy Policy</a>
+      </p>
+      
+        <p>
+          <a href="http://www.uservoice.com/powered-by/?uv_company_name=Strikingly&uv_experience=portal&uv_contact_url=support.strikingly.com&utm_campaign=footer_poweredby&utm_medium=product&utm_source=support.strikingly.com">
+            Powered By UserVoice
+          </a>
+          <span class="uvStyle-separator"> &middot; </span>
+          <a href="http://www.uservoice.com/b/tour/helpdesk/?utm_campaign=footer_helpdesk&utm_medium=product&utm_source=support.strikingly.com">
+            Help Desk & Knowledge Base
+          </a>
+          <span class="uvStyle-separator"> &middot; </span>
+          <a href="http://www.uservoice.com/b/tour/feedback/?utm_campaign=footer_feedback&utm_medium=product&utm_source=support.strikingly.com">
+            Feedback Forum
+          </a>
+        </p>
+      
+    </div>
+  </div>
+</footer>
+
+  </div>
+
+  <script id="uv-user-panel" type="text/x-jquery-tmpl">
+    <section class="uvModuleSection uvModuleSection-userbox uvModuleSection-signout">
+      <div class="vcard">
+        <a class="url" href="${user.uservoice_url}">
+          <span class="uvUserBadge">
+            <img alt="" class="uvUserBadgePhoto photo" src="${user.avatar_url}" width="40">
+          </span>
+          <span class="fn">${user.name}</span>
+        </a>
+        {{if (!user.remembered) }}
+        <span class="uvRememberMe">(<a href="/remember_me" title="Click this link to stay signed in on this computer even after your browser is closed.">Stay signed in</a>)</span>
+        {{/if}}
+      </div>
+      <div class="uvUserNav">
+        <a class="url" href="${user.uservoice_url}">Settings</a>
+        {{if user.roles.admin}}
+          <span class="uvStyle-separator">&middot;</span>
+          <a href="http://support.strikingly.com/admin">Admin Console</a>
+        {{/if}}
+        <span class="uvStyle-separator">&middot;</span>
+        <a href="/logout">Sign out</a>
+      </div>
+    </section>
+  </script>
+
+
+  <script type="text/javascript">
+    var current_forum_id = null;
+  </script>
+
+  <script id="portalForumsTmpl" type="text/x-jquery-tmpl">
+    <li class="uvListItem{{if current_forum_id==id}} uvListItem-selected{{/if}} uvListItem-forum-${id}">
+      <h4 class="uvListItemHeader">
+        <a href="${url}">${name}</a>
+        {{if is_private}}
+         <span class="uvIcon-private-16">(private)</span>
+        {{/if}}
+      </h4>
+      <div class="uvListItemFooter">${idea_count} <span class="uvStyle-count-label">ideas</span></div>
+    </li>
+  </script>
+
+  <script id="portalAltForumsTmpl" type="text/x-jquery-tmpl">
+    <li class="uvListItem{{if current_forum_id==id}} uvListItem-selected{{/if}} uvListItem-forum-${id}">
+      <h4 class="uvListItemHeader">
+        <a href="${url}">${name}</a>
+        {{if is_private}}
+         <span class="uvIcon-private-10">(private)</span>
+        {{/if}}
+      </h4>
+      <p class="uvStyle-meta">
+        ${idea_count}
+        ideas
+      </p>
+    </li>
+  </script>
+
+  <script id="sidebarForumsTmpl" type="text/x-jquery-tmpl">
+    <li class="uvListItem uvListItem-forum{{if current_forum_id==id}} uvListItem-selected{{/if}} uvListItem-forum-${id}">
+      <a href="${url}" title="View all ideas in ${name}">${name}</a>
+      {{if is_private}}
+        <span class="uvIcon-private-10">(private)</span>
+      {{/if}}
+      &nbsp;<span class="uvStyle-count">${idea_count} <span class="uvStyle-count-label">ideas</span></span>
+    </li>
+  </script>
+
+  <script src="//cdn.uservoice.com/pkg/clients/site2-3ae4e8240aedd4043df0bd655867fa69.js"></script>
+  <script type="text/javascript">
+  (function($) { $.uvMessages = {"cookies-disabled":"Uh-oh! Cookies are disabled. Access the feedback forum directly at \u003Ca href=\"http://support.strikingly.com/\" style=\"color: #fff; text-decoration: underline;\" target=\"_blank\"\u003Ehttp://support.strikingly.com/\u003C/a\u003E or enable cookies in your browser settings and refresh this page.","communication-error":"Server communication problems! Please try again.","submit-error":"Sorry, we couldn't submit your request.","voting-submit-error":"We couldn't submit your vote at this time.","out-of-votes-error":"Sorry, we couldn't submit your idea since you're out of votes.","required-fields-error":"Whoops! Please fill in all required fields before continuing.","email-invalid-error":"Invalid email address!","password-invalid-error":"Invalid password!","terms-invalid-error":"You must accept the terms to continue.","large-file-error":"Whoops! You are attempting to upload a file that is too big. Please attach a smaller file and try again.","try-again-error":"Error! Try again.","saving":"Saving","saved":"Saved","nonmatching-passwords":"Passwords must match","password-updated":"Your password has been updated","sent":"Sent!"}; })(jQuery || UV.jQuery);
+</script>
+
+
+
+  <script type="text/javascript">
+    var currentUser = null;
+    var currentUserVersion = parseInt("0", 10);
+
+    var currentClient = {
+      client_key: "Zlewwt7OVhHYrs5pjSwoiA",
+      client_secret: "JCCPvasDwjdu9jx6m4YmeppFekHFNE3HowkFQGScDk",
+      subdomain_key: "strikingly"
+    };
+  </script>
+
+  <script type="text/javascript">
+  window.fbAsyncInit = function() {
+    (function($) {
+    })(jQuery || UV.jQuery);
+  };
+</script>
+<script type="text/javascript">
+  (function() {
+    var e = document.createElement('script');
+    e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js#xfbml=1&appId='+46468144668;
+    e.async = true;
+    document.getElementById('fb-root').appendChild(e);
+  }());
+</script>
+
+
+
+    <script type="text/javascript">
+      window.UserVoice || (window.UserVoice = []);
+
+        UserVoice.push(['set', {"contact_us":true,"contact_enabled":true,"post_idea_enabled":false,"forum_id":196110,"classic_default_mode":"support","custom_template_id":291,"feedback_tab_name":"Give feedback","support_tab_name":"Email the team! (Email again if you miss our confirmation message.)"}]);
+
+      UserVoice.push(['set', 'locale', 'en']);
+
+      (function() {
+        var uv = document.createElement('script'); uv.type = 'text/javascript'; uv.async = true;
+        uv.src = ('https:' == document.location.protocol ? 'https://' : 'http://') +  'widget.uservoice.com/Zlewwt7OVhHYrs5pjSwoiA.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(uv, s);
+      })();
+    </script>
+
+  <!-- start Mixpanel --><script type="text/javascript">var mpq=[];mpq.push(["init","21070e89b14d1c143a1f3155e0c00b01"]);(function(){var b,a,e,d,c;b=document.createElement("script");b.type="text/javascript";b.async=true;b.src=(document.location.protocol==="https:"?"https:":"http:")+"//api.mixpanel.com/site_media/js/api/mixpanel.js";a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(b,a);e=function(f){return function(){mpq.push([f].concat(Array.prototype.slice.call(arguments,0)))}};d=["init","track","track_links","track_forms","register","register_once","identify","name_tag","set_config"];for(c=0;c< d.length;c++){mpq[d[c]]=e(d[c])}})();
+</script><!-- end Mixpanel -->
+
+<script type="text/javascript">
+  // each subdomain to have a separate set of super properties
+  mpq.set_config({ cross_subdomain_cookie: false });
+
+  // Default to anonymous if user not logged in
+  mpq.register({
+    'Anonymous': true
+  });
+
+    mpq.register({
+      'Subdomain':   'strikingly',
+      'Product':     'UserVoice'
+    });
+</script>
+  <script type="text/javascript">
+    
+  </script>
+
+  <img alt="" class="pixel" height="1" src="/track.gif?eyJjaGFubmVsIjoic2l0ZTIiLCJzdWJkb21haW5faWQiOjE2NTgzNywieiI6IlBhY2lmaWMgVGltZSAoVVMgXHUwMDI2IENhbmFkYSkifQ%3D%3D" style="position: absolute; bottom: 0;" width="1" />
+
+</body>
+</html>

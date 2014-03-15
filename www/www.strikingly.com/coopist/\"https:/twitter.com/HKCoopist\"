@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html xmlns:fb='https://www.facebook.com/2008/fbml' xmlns:og='http://ogp.me/ns#' xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-6.newrelic.com","errorBeacon":"jserror.newrelic.com","licenseKey":"74f55de04c","applicationID":"272304","transactionName":"IlcLQxBeWFoHShYOWAhWSl4MVVFO","queueTime":60,"applicationTime":63,"ttGuid":"","agentToken":null,"agent":"js-agent.newrelic.com/nr-356.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"UQcOWVBACgQCV1FW"};window.NREUM||(NREUM={}),__nr_require=function a(b,c,d){function e(f){if(!c[f]){var g=c[f]={exports:{}};b[f][0].call(g.exports,function(a){var c=b[f][1][a];return e(c?c:a)},g,g.exports,a,b,c,d)}return c[f].exports}for(var f=0;f<d.length;f++)e(d[f]);return e}({1:[function(a,b){function c(a,b,c){c||(c={});for(var d=f[a],e=d&&d.length||0,h=c[g]||(c[g]={}),i=0;e>i;i++)d[i].apply(h,b);return h}function d(a,b){var c=f[a]||(f[a]=[]);c.push(b)}function e(a){return delete a[g]}var f={},g="nr@context";b.exports={on:d,emit:c,clear:e}},{}],2:[function(a){function b(a,b,e,g,i){return h?h-=1:c("err",[i||new UncaughtException(a,b,e)]),"function"==typeof f?f.apply(this,d(arguments)):!1}function UncaughtException(a,b,c){this.message=a||"Uncaught error with no additional information",this.sourceURL=b,this.line=c}var c=a("handle"),d=a("lodash._slice"),e=a("../../../contextual-ee"),f=window.onerror,g=!1,h=0;a("loader").features.push("err"),window.onerror=b;try{throw new Error}catch(i){"stack"in i&&(a("../../wrap-timer"),a("../../wrap-raf"),"addEventListener"in window&&a("../../wrap-events"),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&a("../../wrap-xhr"),g=!0)}e.on("fn-start",function(){g&&(h+=1)}),e.on("fn-err",function(a,b,d){g&&(this.thrown=!0,c("err",[d,(new Date).getTime()]))}),e.on("fn-end",function(){g&&!this.thrown&&h>0&&(h-=1)})},{"../../../contextual-ee":1,"../../wrap-events":3,"../../wrap-raf":4,"../../wrap-timer":5,"../../wrap-xhr":6,handle:"4O2Y62",loader:"YLUGVp","lodash._slice":14}],3:[function(a){function b(a){d.inPlace(a,["addEventListener","removeEventListener"],"-",c)}function c(a){return a[1]}var d=a("../wrap-function"),e=(a("lodash._slice"),a("../contextual-ee"));if(b(window),"getPrototypeOf"in Object){for(var f=document;f&&!f.hasOwnProperty("addEventListener");)f=Object.getPrototypeOf(f);f&&b(f);for(var g=XMLHttpRequest.prototype;g&&!g.hasOwnProperty("addEventListener");)g=Object.getPrototypeOf(g);g&&b(g)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&b(XMLHttpRequest.prototype);e.on("addEventListener-start",function(a){if(a[1]){var b=a[1];"function"==typeof b?this.wrapped=b["nr@wrapped"]?a[1]=b["nr@wrapped"]:b["nr@wrapped"]=a[1]=d(b,"fn-"):"function"==typeof b.handleEvent&&d.inPlace(b,["handleEvent"],"fn-")}}),e.on("removeEventListener-start",function(a){var b=this.wrapped;b&&(a[1]=b)})},{"../contextual-ee":1,"../wrap-function":15,"lodash._slice":14}],4:[function(a){var b=(a("lodash._slice"),a("../wrap-function")),c=a("../contextual-ee");b.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),c.on("raf-start",function(a){a[0]=b(a[0],"fn-")})},{"../contextual-ee":1,"../wrap-function":15,"lodash._slice":14}],5:[function(a){function b(a){var b=a[0];"string"==typeof b&&(b=new Function(b)),a[0]=c(b,"fn-")}var c=(a("lodash._slice"),a("../wrap-function")),d=a("../contextual-ee");c.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),d.on("setTimer-start",b)},{"../contextual-ee":1,"../wrap-function":15,"lodash._slice":14}],6:[function(a){function b(){c.inPlace(this,f,"fn-")}var c=a("../wrap-function"),d=a("../contextual-ee"),e=window.XMLHttpRequest,f=["onload","onerror","onabort","onloadstart","onloadend","onprogress","onreadystatechange","ontimeout"];window.XMLHttpRequest=function(a){var f=new e(a);return d.emit("new-xhr",[],f),c.inPlace(f,["addEventListener","removeEventListener"],"-",function(a,b){return b}),f.addEventListener("readystatechange",b,!1),f},window.XMLHttpRequest.prototype=e.prototype},{"../contextual-ee":1,"../wrap-function":15}],7:[function(a){function b(a){var b=this.params,c=this.metrics;if(!this.ended){this.ended=!0;for(var d=0;j>d;d++)a.removeEventListener(i[d],this.listener,!1);if(!b.aborted){if(c.duration=(new Date).getTime()-this.startTime,4===a.readyState){if(b.status=a.status,a.responseText&&a.responseText.length&&(c.rxSize=a.responseText.length),this.sameOrigin){var f=a.getResponseHeader("X-NewRelic-App-Data");f&&(b.cat=f.split(", ").pop())}}else b.status=0;c.cbTime=this.cbTime,e("xhr",[b,c])}}}function c(a,b){var c=f(b),d=a.params;d.host=c.hostname+":"+c.port,d.pathname=c.pathname,a.sameOrigin=c.sameOrigin}function d(a,b){return b}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){a("loader").features.push("xhr");var e=a("handle"),f=a("./parse-url.js"),g=a("../../../wrap-function"),h=a("../../../contextual-ee"),i=["load","error","abort","timeout"],j=i.length,k=a("../../../loader/id");a("../../wrap-events"),a("../../wrap-xhr"),h.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=b,this.ended=!1,this.xhrGuids={}}),g.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",d),h.on("open-xhr-start",function(a){this.params={method:a[0]},c(this,a[1]),this.metrics={}}),h.on("open-xhr-end",function(a,b){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&b.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),h.on("send-xhr-start",function(a,b){var c=this.metrics,d=a[0],e=this;c&&d&&d.length&&(c.txSize=d.length),this.startTime=(new Date).getTime(),this.listener=function(a){"abort"===a.type&&(e.params.aborted=!0),("load"!==a.type||e.called===e.totalCbs&&(e.onloadCalled||"function"!=typeof b.onload))&&e.end(b)};for(var f=0;j>f;f++)b.addEventListener(i[f],this.listener,!1)}),h.on("xhr-cb-time",function(a,b,c){this.cbTime+=a,b?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof c.onload||this.end(c)}),h.on("xhr-load-added",function(a,b){var c=""+k(a)+!!b;this.xhrGuids&&!this.xhrGuids[c]&&(this.xhrGuids[c]=!0,this.totalCbs+=1)}),h.on("xhr-load-removed",function(a,b){var c=""+k(a)+!!b;this.xhrGuids&&this.xhrGuids[c]&&(delete this.xhrGuids[c],this.totalCbs-=1)}),h.on("addEventListener-end",function(a,b){b instanceof XMLHttpRequest&&"load"===a[0]&&h.emit("xhr-load-added",[a[1],a[2]],b)}),h.on("removeEventListener-end",function(a,b){b instanceof XMLHttpRequest&&"load"===a[0]&&h.emit("xhr-load-removed",[a[1],a[2]],b)}),h.on("fn-start",function(a,b,c){b instanceof XMLHttpRequest&&("onload"===c&&(this.onload=!0),("load"===(a[0]&&a[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),h.on("fn-end",function(a,b){this.xhrCbStart&&h.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,b],b)})}},{"../../../contextual-ee":1,"../../../loader/id":11,"../../../wrap-function":15,"../../wrap-events":3,"../../wrap-xhr":6,"./parse-url.js":8,handle:"4O2Y62",loader:"YLUGVp"}],8:[function(a,b){b.exports=function(a){var b=document.createElement("a"),c=window.location,d={};b.href=a,d.port=b.port;var e=b.href.split("://");return!d.port&&e[1]&&(d.port=e[1].split("/")[0].split(":")[1]),d.port&&"0"!==d.port||(d.port="https"===e[0]?"443":"80"),d.hostname=b.hostname||c.hostname,d.pathname=b.pathname,"/"!==d.pathname.charAt(0)&&(d.pathname="/"+d.pathname),d.sameOrigin=!b.hostname||b.hostname===document.domain&&b.port===c.port&&b.protocol===c.protocol,d}},{}],handle:[function(a,b){b.exports=a("4O2Y62")},{}],"4O2Y62":[function(a,b){function c(a,b){var c=d[a];return c?c.apply(this,b):(e[a]||(e[a]=[]),void e[a].push(b))}var d={},e={};b.exports=c,c.queues=e,c.handlers=d},{}],11:[function(a,b){function c(a){if(!a||"object"!=typeof a&&"function"!=typeof a)return-1;if(a===window)return 0;if(e.call(a,"__nr"))return a.__nr;try{return Object.defineProperty(a,"__nr",{value:d,writable:!0,enumerable:!1}),d}catch(b){return a.__nr=d,d}finally{d+=1}}var d=1,e=Object.prototype.hasOwnProperty;b.exports=c},{}],loader:[function(a,b){b.exports=a("YLUGVp")},{}],YLUGVp:[function(a,b){function c(){var a=m.info=NREUM.info;if(a&&a.agent&&a.licenseKey&&a.applicationID){m.proto="https"===l.split(":")[0]||a.sslForHttp?"https://":"http://",g("mark",["onload",f()]);var b=i.createElement("script");b.src=m.proto+a.agent,i.body.appendChild(b)}}function d(){"complete"===i.readyState&&e()}function e(){g("mark",["domContent",f()])}function f(){return(new Date).getTime()}var g=a("handle"),h=window,i=h.document,j="addEventListener",k="attachEvent",l=(""+location).split("?")[0],m=b.exports={offset:f(),origin:l,features:[]};i[j]?(i[j]("DOMContentLoaded",e,!1),h[j]("load",c,!1)):(i[k]("onreadystatechange",d),h[k]("onload",c)),g("mark",["firstbyte",f()])},{handle:"4O2Y62"}],14:[function(a,b){function c(a,b,c){b||(b=0),"undefined"==typeof c&&(c=a?a.length:0);for(var d=-1,e=c-b||0,f=Array(0>e?0:e);++d<e;)f[d]=a[b+d];return f}b.exports=c},{}],15:[function(a,b){function c(a,b,c,d){function nrWrapper(){var g,h=f(arguments),i=this,j=c&&c(h,i)||{};try{e.emit(b+"start",[h,i,d],j)}catch(k){}try{return g=a.apply(i,h)}catch(l){throw e.emit(b+"err",[h,i,l],j),l}finally{try{e.emit(b+"end",[h,i,g],j)}catch(k){}}}return a&&"function"==typeof a&&a.apply&&!a._wrapped?(b||(b=""),nrWrapper._wrapped=!0,nrWrapper):a}function d(a,b,d,e){d||(d="");var f,g,h,i="-"===d.charAt(0);for(h=0;h<b.length;h++)g=b[h],f=a[g],f&&"function"==typeof f&&f.apply&&!f._wrapped&&(a[g]=c(f,i?g+d:d,e,g,a))}var e=a("../contextual-ee"),f=a("lodash._slice");b.exports=c,c.inPlace=d},{"../contextual-ee":1,"lodash._slice":14}]},{},["YLUGVp",2,7]);</script>
+<title>How To Make Your Own Website - Best Website Builder | Strikingly</title>
+<link href='https://www.strikingly.com' rel='canonical'>
+<link href='https://assets.strikingly.com/assets/icons/favicon.ico' rel='shortcut icon' type='image/x-icon'>
+<meta content='Strikingly is the best website builder for anyone to build a well designed, mobile-friendly website easily. Quick, simple and stylish. Come and grab yours.' name='description'>
+<link href='https://plus.google.com/+Strikingly' rel='author'>
+<link href='https://plus.google.com/+Strikingly' rel='publisher'>
+<meta content='How To Make Your Own Website - Best Website Builder | Strikingly' itemprop='name'>
+<meta content='Strikingly is the best website builder for anyone to build a well designed, mobile-friendly website easily. Quick, simple and stylish. Come and grab yours.' itemprop='description'>
+<meta content='http://assets.strikingly.com/assets/logo-fb-default.png' itemprop='image'>
+<meta content='summary_large_image' name='twitter:card'>
+<meta content='@strikingly' name='twitter:site'>
+<meta content='@strikingly' name='twitter:creator'>
+<meta content='How To Make Your Own Website - Best Website Builder | Strikingly' name='twitter:title'>
+<meta content='Strikingly is the best website builder for anyone to build a well designed, mobile-friendly website easily. Quick, simple and stylish. Come and grab yours.' name='twitter:description'>
+<meta content='http://assets.strikingly.com/assets/landing2/twitter-card.jpg' name='twitter:image'>
+<meta content='How To Make Your Own Website - Best Website Builder | Strikingly' property='og:title'>
+<meta content='website' property='og:type'>
+<meta content='https://www.strikingly.com' property='og:url'>
+<meta content='http://assets.strikingly.com/assets/logo-fb-default.png' property='og:image'>
+<meta content='Strikingly' property='og:site_name'>
+<meta content='Strikingly is the best website builder for anyone to build a well designed, mobile-friendly website easily. Quick, simple and stylish. Come and grab yours.' property='og:description'>
+<meta content='601890778' property='fb:admins'>
+<script type="text/javascript">
+//<![CDATA[
+window.$S = {};$S.conf={"FACEBOOK_APP_ID":"138736959550286","FACEBOOK_PERMS":"email,publish_stream","LINKEDIN_API_KEY":"75e3owxa1ycepq","LINKEDIN_PERMS":"r_basicprofile r_emailaddress","show_linkedin_login":false,"SEGMENTIO_API_KEY":"eb3txa37hi"};$S.auth={"facebook_callback_path":"/r/v1/users/auth/facebook/callback","linkedin_callback_path":"/r/v1/users/auth/linkedin/callback"};
+//]]>
+</script>
+<meta content='{"analytics_logger_url":"https://stats.striking.ly","env_test":false}' id='app-configs' name='app-configs'>
+<meta content='Strikingly' name='author'>
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<meta charset='utf-8'>
+<link href="//assets.strikingly.com/assets/landing-new-72a6463174d9f34ded1c3c0056c29ace.css" media="screen" rel="stylesheet" type="text/css" />
+<meta content='' name='user_code'>
+<meta content='' name='ref'>
+
+<script type='text/javascript'>
+window.analytics||(window.analytics=[]),window.analytics.methods=["identify","track","trackLink","trackForm","trackClick","trackSubmit","page","pageview","ab","alias","ready","group","on","once","off"],window.analytics.factory=function(t){return function(){var a=Array.prototype.slice.call(arguments);return a.unshift(t),window.analytics.push(a),window.analytics}};for(var i=0;i<window.analytics.methods.length;i++){var method=window.analytics.methods[i];window.analytics[method]=window.analytics.factory(method)}window.analytics.load=function(t){var a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=("https:"===document.location.protocol?"https://":"http://")+"d2dq2ahtl5zl1z.cloudfront.net/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n)},window.analytics.SNIPPET_VERSION="2.0.8",
+window.analytics.load($S.conf.SEGMENTIO_API_KEY);
+window.analytics.page();
+</script>
+<script>
+window.PHRASE_CONFIG = {
+prefix: '{[{__',
+suffix: "__}]}",
+autoLowercase: false
+}
+</script>
+</head>
+<body class='locale-en'>
+<div class='upper-left'></div>
+<div class='upper-right'>
+<div class='clearfix'>
+<a class='button' href='/s/login'>Log in</a>
+<a class='button button-last hidden' href='javascript:void(0)'>Sign up</a>
+</div>
+<div class='clearfix'>
+</div>
+</div>
+<div class='sections'>
+<div class='dark lazy resize section see-more-section selected' data-background='//assets.strikingly.com/assets/landing2/dark-bg-6f6ee8e4cfff4b4e99cb60347e7652cb.png'>
+<div class='inner fade'>
+<div class='container center fixed-container'>
+<div class='clearfix'>
+<div class='sixteen columns'>
+<div class='logo' onclick="javascript:$('#user_profile_attributes_first_name').focus()">
+<img alt="How To Make Your Own Website - Best Website Builder | Strikingly" class="bg x2" src="//assets.strikingly.com/assets/landing2/logo-big-96a5813e8959fae945bcf7d7f741ad0b.png" style="height:133px;" />
+</div>
+<div class='tagline-line'></div>
+<h3 class='tagline' onclick="javascript:$('#user_profile_attributes_first_name').focus()">
+Gorgeous, mobile-friendly websites in minutes.<br />Grab yours.
+</h3>
+<div class='tagline-line'></div>
+<div class='spacer small'></div>
+<form accept-charset="UTF-8" action="/s/users.jsm" class="simple_form form new-user-form" data-remote="true" id="new_user" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="XK1oqyux7bkQnnqe5LulDfO8jdp0XW4zOmHCiMG6OKk=" /></div><input class="user_code_field" id="user_user_code" name="user[user_code]" type="hidden" />
+<input class="ref_url_field" id="user_ref_url" name="user[ref_url]" type="hidden" />
+<input class="ref_field" id="user_ref" name="user[ref]" type="hidden" />
+<div class='row email-signup'>
+<div class='col short'>
+<div class='signup-arrow'>
+</div>
+<div class='field'>
+<label class='overlay'>First Name</label>
+<input autocomplete="off" id="user_profile_attributes_first_name" name="user[profile_attributes][first_name]" size="30" type="text" />
+</div>
+</div>
+<div class='col'>
+<div class='field'>
+<label class='overlay'>Email</label>
+<input autocomplete="off" id="user_email" name="user[email]" size="30" type="text" value="" />
+</div>
+</div>
+<div class='col'>
+<div class='field'>
+<label class='overlay'>Password</label>
+<input autocomplete="off" id="user_password" name="user[password]" size="30" type="password" />
+</div>
+</div>
+<div class='col short'>
+<input class="submit btn sign-up-button" data-disable-with="Registering..." name="commit" type="submit" value="Get Started. It&#x27;s free!" />
+</div>
+</div>
+<div class='row'>
+<div class='facebook-login-container'>
+<span class='terms' style='position:relative; top: 1px;'>OR</span>
+<a class='facebook-login tiny fb-blue btn' href='javascript:void(0);'>Sign up with Facebook!</a>
+<br>
+</div>
+<div class='linkedin-login-container' style='display:none;'>
+<span class='terms' style='position:relative; top: 1px;'>OR</span>
+<a class='linkedin-login tiny fb-blue btn' href='javascript:void(0);'>Sign up with LinkedIn!</a>
+<br>
+</div>
+<br>
+<br>
+<div class='terms'>By continuing, you agree to Strikingly's <a href="http://support.strikingly.com/knowledgebase/articles/179175-terms-of-service" target="_blank">Terms of Service</a> and <a href="http://support.strikingly.com/knowledgebase/articles/179177-privacy-policy" target="_blank">Privacy Policy</a>.</div>
+</div>
+<div class='row'>
+<div class='col full error error-msg hidden'></div>
+</div>
+</form>
+
+
+<div class='sign-up-buttons center'>
+<a class='btn purple button-next' href='javascript:void(0)'>Curious? Learn More.</a>
+</div>
+<div class='fixed-spacer'></div>
+<div class='fixed-spacer'></div>
+</div>
+</div>
+</div>
+</div>
+<div class='see-more gray'>
+<a class='learn-more-button button-second-page' href='#'></a>
+<div class='white left gray'></div>
+<div class='white-arrow gray'></div>
+<div class='white right gray'></div>
+<div class='white-bottom gray'></div>
+<div class='learn-more left'>OR Scroll Down</div>
+<div class='learn-more right'>To Learn more!</div>
+</div>
+</div>
+<div class='gray lazy section' data-background='//assets.strikingly.com/assets/landing2/gray-bg-5d1ad0c10a4410632bde0f478b397305.png'>
+<div class='inner skinny'>
+<div class='container center'>
+<div class='sixteen columns'>
+<h5>Featured in</h5>
+<br>
+<a href='http://www.nytimes.com/2013/05/05/magazine/y-combinator-silicon-valleys-start-up-machine.html?pagewanted=all&amp;_r=0' target='_blank'>
+<img alt="Y Combinator, Silicon Valley&#x27;s Startup Machine" class="lazy" data-original="//assets.strikingly.com/assets/landing2/nyt-d29c9fc4cc6366f10a33abec1d8f179c.png" src="//assets.strikingly.com/assets/landing2/blank-6442bce299e5d7d9455721cc4f250620.png" style="height:42px;" />
+</a>
+&nbsp;
+<a href='http://www.forbes.com/sites/morganhartley/2013/03/19/how-a-y-combinator-startup-is-born-the-story-of-strikingly/' target='_blank'>
+<img alt="How a Y Combinator Startup Is Born - The Story of Strikingly" class="lazy" data-original="//assets.strikingly.com/assets/landing2/forbes-a2bc8db9d47ccad9b3a19f304029df26.png" src="//assets.strikingly.com/assets/landing2/blank-6442bce299e5d7d9455721cc4f250620.png" style="height:42px;" />
+</a>
+&nbsp;
+<a href='http://www.techcrunch.com/2013/02/13/strikingly/' target='_blank'>
+<img alt="Y Combinator-Backed Strikingly Launches To Help Publishers Build Compelling Mobile-First Web Experiences" class="lazy" data-original="//assets.strikingly.com/assets/landing2/tc-956cd79cef842e68fdfcc9ffc0245932.png" src="//assets.strikingly.com/assets/landing2/blank-6442bce299e5d7d9455721cc4f250620.png" style="height:42px;" />
+</a>
+&nbsp;
+<a href='http://www.lifehacker.com/5989963/strikingly-creates-simple-beautiful-web-sites-in-minutes' target='_blank'>
+<img alt="Strikingly Creates Simple, Beautiful Web Sites in Minutes" class="lazy" data-original="//assets.strikingly.com/assets/landing2/lifehacker-023e6626aa411fc250df47762c7f6ecf.png" src="//assets.strikingly.com/assets/landing2/blank-6442bce299e5d7d9455721cc4f250620.png" style="height:42px;" />
+</a>
+&nbsp;
+<a href='http://thenextweb.com/insider/2013/04/26/yc-alum-strikingly-nabs-1-5m-from-sv-angel-index-ventures-fundersclub-others-for-its-diy-website-creator-service/' target='_blank'>
+<img alt="Strikingly raises $1.5M from SV Angel, Index Ventures, FundersClub, others for its DIY site builder" class="lazy" data-original="//assets.strikingly.com/assets/landing2/tnw-a6cd2eeeedb796849a902e65849acd0c.png" src="//assets.strikingly.com/assets/landing2/blank-6442bce299e5d7d9455721cc4f250620.png" style="height:42px;" />
+</a>
+&nbsp;
+<a href='http://bluesky.chicagotribune.com/originals/chi-strikingly-david-chen-bsi-20131127,0,0.story' target='_blank'>
+<img alt="Strikingly builds mobile sites in 10 minutes and is trying to get faster" class="lazy" data-original="//assets.strikingly.com/assets/landing2/tribune-0d5486d09d66e623776a101ec9864271.png" src="//assets.strikingly.com/assets/landing2/blank-6442bce299e5d7d9455721cc4f250620.png" style="height:42px;" />
+</a>
+&nbsp;
+<a href='http://www.usatoday.com/story/tech/2013/09/29/personal-website-free-strikingly-photos/2875731/' target='_blank'>
+<img alt="TECH NOW: What to put on your personal website" class="lazy" data-original="//assets.strikingly.com/assets/landing2/usa-today-b453169b61350cc09f3dad69dd801993.png" src="//assets.strikingly.com/assets/landing2/blank-6442bce299e5d7d9455721cc4f250620.png" style="height:42px;" />
+</a>
+&nbsp;
+<a href='http://www.inc.com/issie-lapowsky/4-ways-screwing-up-website.html?cid=sf01001' target='_blank'>
+<img alt="4 Mistakes You&#x27;re Probably Making on Your Website" class="lazy" data-original="//assets.strikingly.com/assets/landing2/inc-9834746b2a4a49c3f5a397c670c0293d.png" src="//assets.strikingly.com/assets/landing2/blank-6442bce299e5d7d9455721cc4f250620.png" style="height:42px;" />
+</a>
+&nbsp;
+<br>
+</div>
+</div>
+</div>
+</div>
+<div class='section'>
+<div class='inner'>
+<div class='demo s-page-layer fill'>
+<div class='s-page-shade fill'></div>
+<div class='s-page-wrapper'>
+<div class='back-btn'>
+<div class='fa fa-reply'></div>
+Back
+</div>
+<div class='s-page-content'>
+<iframe frameborder='0' id='s-demo-iframe' marginheight='0' marginwidth='0' src=''></iframe>
+</div>
+</div>
+</div>
+<div class='container center'>
+<div class='sixteen columns'>
+<h2>The best website builder for the mobile age has just arrived</h2>
+<p class='big'>
+Own a one-pager for your <span class='b'>business, project,</span> or <span class='b'>personal branding</span>.
+</p>
+<div class='spacer big'></div>
+</div>
+<div class='center row'>
+<div class='five columns no-float skinny'>
+<div class='preview'>
+<a class='nudge pitch-deck view-site-btn' href='http://yathletics.com/' target='_blank'>
+<div class='visit'>View site</div>
+<div class='monitor-small'><img alt="Y Athletics | Powered by Strikingly, Best Website Builder" class="lazy" data-original="//assets.strikingly.com/assets/landing2/y-athletics-04fc9f0f4b1419fbd9e68f4224666368.png" src="//assets.strikingly.com/assets/landing2/blank-6442bce299e5d7d9455721cc4f250620.png" style="height:205px" /></div>
+</a>
+<span>
+<a class='pitch-deck' href='http://yathletics.com/' target='_blank'>
+Y Athletics Website
+</a>
+</span>
+</div>
+<div class='quote-box-container'>
+<div class='quote-box-vertical'>
+<div class='white'>Strikingly is more than a platform... It's a community.</div>
+<div class='quote-arrow'>
+<div class='l1'></div>
+<div class='l2'></div>
+<div class='l3'></div>
+<div class='l4'></div>
+<div class='l5'></div>
+</div>
+</div>
+<div class='quote-source'>
+<img alt="Arbab Mazumdar" class="quote-image lazy" data-original="//assets.strikingly.com/assets/landing2/arbab-cb1831d8ec5ffe37bb48ed23da810d15.jpg" src="//assets.strikingly.com/assets/landing2/blank-6442bce299e5d7d9455721cc4f250620.png" style="width:45px;height:45px;" />
+<div class='text'>Arbab Mazumdar, Founder, Y Athletics</div>
+</div>
+</div>
+</div>
+<div class='six columns no-float skinny'>
+<div class='preview'>
+<a class='landing-page view-site-btn' href='http://kipsolutions.co' target='_blank'>
+<div class='visit'>View site</div>
+<img alt="Kip Solutions | Powered by Strikingly, Best Website Builder" class="lazy" data-original="//assets.strikingly.com/assets/landing2/kip-devices-d10b005684b84e571b258b71fd75503a.png" src="//assets.strikingly.com/assets/landing2/blank-6442bce299e5d7d9455721cc4f250620.png" style="height:242px" />
+</a>
+<span>
+<a class='landing-page' href='http://kipsolutions.co' target='_blank'>
+Kip Solutions Website
+</a>
+</span>
+</div>
+<div class='quote-box-container'>
+<div class='quote-box-vertical'>
+<div class='white pad'>Our clients love our website!</div>
+<div class='quote-arrow'>
+<div class='l1'></div>
+<div class='l2'></div>
+<div class='l3'></div>
+<div class='l4'></div>
+<div class='l5'></div>
+</div>
+</div>
+<div class='quote-source'>
+<img alt="Patrick Ip" class="quote-image lazy" data-original="//assets.strikingly.com/assets/landing2/pip-pic-bb058f78a6c9ceed80427b75dea0e285.png" src="//assets.strikingly.com/assets/landing2/blank-6442bce299e5d7d9455721cc4f250620.png" style="width:45px;height:45px" />
+<div class='text'>Patrick Ip, CEO of Kip Solutions</div>
+</div>
+</div>
+</div>
+<div class='five columns no-float skinny'>
+<div class='preview'>
+<a class='personal-resume nudge view-site-btn' href='http://strikingly.com/quinntonharris' target='_blank'>
+<div class='visit'>View site</div>
+<div class='monitor-small'><img alt="Quinnton Harris | Powered by Strikingly, Best Website Builder" class="lazy" data-original="//assets.strikingly.com/assets/landing2/quinnton-b13b82188103bdae3ae7f90bc1b34888.png" src="//assets.strikingly.com/assets/landing2/blank-6442bce299e5d7d9455721cc4f250620.png" style="height:205px" /></div>
+</a>
+<span>
+<a class='personal-resume' href='http://strikingly.com/quinntonharris' target='_blank'>
+Quinnton's Story
+</a>
+</span>
+</div>
+<div class='quote-box-container'>
+<div class='quote-box-vertical'>
+<div class='white'>Strikingly is intuitive and empowering.</div>
+<div class='quote-arrow'>
+<div class='l1'></div>
+<div class='l2'></div>
+<div class='l3'></div>
+<div class='l4'></div>
+<div class='l5'></div>
+</div>
+</div>
+<div class='quote-source'>
+<img alt="Quinnton Harris" class="quote-image lazy" data-original="//assets.strikingly.com/assets/landing2/quinnton-pic-d255b1e8e05c19ba61665b79a4ca1ed5.png" src="//assets.strikingly.com/assets/landing2/blank-6442bce299e5d7d9455721cc4f250620.png" style="width:45px;height:45px" />
+<div class='text'>Quinnton Harris, Designer, MIT '11</div>
+</div>
+</div>
+</div>
+</div>
+<div class='row view-more-example'>
+<br>
+<br>
+<br>
+<div class='sixteen columns'>
+<div class='light-button-container'><a href="/s/gallery" class="light-button">View our user gallery</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='gray lazy section' data-background='//assets.strikingly.com/assets/landing2/gray-bg-5d1ad0c10a4410632bde0f478b397305.png'>
+<div class='inner'>
+<div class='container'>
+<div class='row'>
+<div class='nine columns offset-one'>
+<img alt="How to build a website with the easiest editor possible" class="lazy" data-original="//assets.strikingly.com/assets/landing2/imac-c461aa9aaa2a21ad054a8a788357adc9.png" src="//assets.strikingly.com/assets/landing2/blank-6442bce299e5d7d9455721cc4f250620.png" style="height:444px" />
+</div>
+<div class='four columns offset-one fixed-center'>
+<div class='fixed-hidden'>
+<br>
+</div>
+<h2>The Easiest Editor Possible</h2>
+<p class='big'>
+Absolutely no code or design experience needed. Do everything on one screen. Click anything to edit, and publish instantly. <br /><br />Build a beautiful website in under 30 minutes.
+</p>
+</div>
+</div>
+<br>
+<div class='row'>
+<div class='ten columns right offset-one'>
+<img alt="How to make your own website rock on all devices" class="lazy" data-original="//assets.strikingly.com/assets/landing2/devices-f1dee13289f8e1910f7507e2b0b192f7.png" src="//assets.strikingly.com/assets/landing2/blank-6442bce299e5d7d9455721cc4f250620.png" style="height:264px" />
+</div>
+<div class='four columns right-align right fixed-center'>
+<div class='fixed-hidden'>
+<br>
+</div>
+<h2>Beautiful Mobile Websites</h2>
+<p class='big'>Our responsive templates look great on any device, automatically.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='section'>
+<div class='inner'>
+<div class='container center'>
+<div class='sixteen columns'>
+<h2>All the tools you need</h2>
+<p class='big'>Get your page out there. We know you have it in you, and we're here to help.</p>
+<div class='spacer'></div>
+</div>
+<div class='four columns'>
+<img alt="Build a website with your custom domain" class="lazy" data-original="//assets.strikingly.com/assets/landing2/feature-domain-3be1b28e18a8563622ad254b62544fda.png" src="//assets.strikingly.com/assets/landing2/blank-6442bce299e5d7d9455721cc4f250620.png" style="height:160px" />
+<div class='spacer smaller'></div>
+<p class='pad'>Register a new domain name or use one you already own. (Available after upgrading.)</p>
+</div>
+<div class='four columns'>
+<img alt="Make your own website search engine optimized" class="lazy" data-original="//assets.strikingly.com/assets/landing2/feature-seo-f86ea644ec6b012933a53799d401b7e4.png" src="//assets.strikingly.com/assets/landing2/blank-6442bce299e5d7d9455721cc4f250620.png" style="height:160px" />
+<div class='spacer smaller'></div>
+<p class='pad'>Search engine optimized, so your audience can find you easily.</p>
+</div>
+<div class='four columns'>
+<img alt="Powerful analytics to see your audience" class="lazy" data-original="//assets.strikingly.com/assets/landing2/feature-analytics-fd4ef59f64a61110e5d9ad435c6b8dc9.png" src="//assets.strikingly.com/assets/landing2/blank-6442bce299e5d7d9455721cc4f250620.png" style="height:160px" />
+<div class='spacer smaller'></div>
+<p class='pad'>Page analytics lets you keep track of who's been visiting. Know when you've gone viral!</p>
+</div>
+<div class='four columns'>
+<img alt="Start generating leads" class="lazy" data-original="//assets.strikingly.com/assets/landing2/feature-forms-9063804b6f21b691805451ced2338bf9.png" src="//assets.strikingly.com/assets/landing2/blank-6442bce299e5d7d9455721cc4f250620.png" style="height:160px" />
+<div class='spacer smaller'></div>
+<p class='pad'>Add a contact form or email collector to your page to connect to your users directly.</p>
+</div>
+</div>
+<br>
+<br>
+</div>
+</div>
+<div class='dark lazy resize section' data-background='//assets.strikingly.com/assets/landing2/dark-bg-6f6ee8e4cfff4b4e99cb60347e7652cb.png'>
+<div class='inner fade'>
+<div class='container center'>
+<div class='sixteen columns'>
+<div class='logo' onclick='javascript:$($(&apos;[name="user[profile_attributes][first_name]"]&apos;)[1]).focus()'><img alt="How To Make Your Own Website - Best Website Builder | Strikingly" class="bg x2 lazy" data-original="//assets.strikingly.com/assets/landing2/logo-small-big-dfde19c3011985589a3e78b2f8c4db8f.png" src="//assets.strikingly.com/assets/landing2/blank-6442bce299e5d7d9455721cc4f250620.png" style="height:101px;" /></div>
+<h1 class='footer-tagline' onclick='javascript:$($(&apos;[name="user[profile_attributes][first_name]"]&apos;)[1]).focus()'>
+This is how to make your own website. Get yours for free.
+</h1>
+<div class='spacer small'></div>
+<form accept-charset="UTF-8" action="/s/users.jsm" class="simple_form form new-user-form" data-remote="true" id="new_user" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="XK1oqyux7bkQnnqe5LulDfO8jdp0XW4zOmHCiMG6OKk=" /></div><input class="user_code_field" id="user_user_code" name="user[user_code]" type="hidden" />
+<input class="ref_url_field" id="user_ref_url" name="user[ref_url]" type="hidden" />
+<input class="ref_field" id="user_ref" name="user[ref]" type="hidden" />
+<div class='row email-signup'>
+<div class='col short'>
+<div class='signup-arrow'>
+</div>
+<div class='field'>
+<label class='overlay'>First Name</label>
+<input autocomplete="off" id="user_profile_attributes_first_name" name="user[profile_attributes][first_name]" size="30" type="text" />
+</div>
+</div>
+<div class='col'>
+<div class='field'>
+<label class='overlay'>Email</label>
+<input autocomplete="off" id="user_email" name="user[email]" size="30" type="text" value="" />
+</div>
+</div>
+<div class='col'>
+<div class='field'>
+<label class='overlay'>Password</label>
+<input autocomplete="off" id="user_password" name="user[password]" size="30" type="password" />
+</div>
+</div>
+<div class='col short'>
+<input class="submit btn sign-up-button" data-disable-with="Registering..." name="commit" type="submit" value="Get Started. It&#x27;s free!" />
+</div>
+</div>
+<div class='row'>
+<div class='facebook-login-container'>
+<span class='terms' style='position:relative; top: 1px;'>OR</span>
+<a class='facebook-login tiny fb-blue btn' href='javascript:void(0);'>Sign up with Facebook!</a>
+<br>
+</div>
+<div class='linkedin-login-container' style='display:none;'>
+<span class='terms' style='position:relative; top: 1px;'>OR</span>
+<a class='linkedin-login tiny fb-blue btn' href='javascript:void(0);'>Sign up with LinkedIn!</a>
+<br>
+</div>
+<br>
+<br>
+<div class='terms'>By continuing, you agree to Strikingly's <a href="http://support.strikingly.com/knowledgebase/articles/179175-terms-of-service" target="_blank">Terms of Service</a> and <a href="http://support.strikingly.com/knowledgebase/articles/179177-privacy-policy" target="_blank">Privacy Policy</a>.</div>
+</div>
+<div class='row'>
+<div class='col full error error-msg hidden'></div>
+</div>
+</form>
+
+
+</div>
+<div class='sixteen columns'>
+<div class='footer'>
+<div class='clearfix'>
+<br>
+</div>
+<div class='footer-line'></div>
+<div class='footer-bottom'>
+<a class='fb-icon' href='http://facebook.com/strikingly'>
+<img alt="Blank" class="lazy" data-original="//assets.strikingly.com/assets/landing2/fb-icon-5cbce7b6e43d5cd241ba69e326e9eddf.png" src="//assets.strikingly.com/assets/landing2/blank-6442bce299e5d7d9455721cc4f250620.png" style="width:25px;height:25px;" />
+</a>
+<a class='text' href='javascript:void(0)' id='footer-about'>FAQ</a>
+<a href="/s/pricing" class="text">Pricing</a>
+<a class='text' href='http://strikingly.com/apply' id='footer-careers' target='_blank'>Careers</a>
+<a class='text' href='javascript:void(0)' id='footer-contact'>Contact</a>
+<a class='text' href='/online-resume/linkedin' id='footer-contact' title='LinkedIn One-Click Online Resume'>LinkedIn App</a>
+<a class='text' href='http://support.strikingly.com/knowledgebase/articles/179175-terms-of-service'>Terms</a>
+<a class='text' href='http://support.strikingly.com/knowledgebase/articles/179177-privacy-policy'>Privacy</a>
+&nbsp; &nbsp; &nbsp;
+<div class='footer-social-media'>
+<div class='fb-like' data-href='https://www.facebook.com/strikingly' data-layout='button_count' data-send='false' data-show-faces='false' data-width='90'></div>
+&nbsp;
+<a class='tweet twitter-share-button' data-count='horizontal' data-counturl='https://www.strikingly.com' data-text='Gorgeous mobile-optimized websites in minutes.' data-url='https://www.strikingly.com?ref=tw' data-via='Strikingly' href='http://twitter.com/share'>
+Tweet
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='gray hidden lazy section' data-background='//assets.strikingly.com/assets/landing2/gray-bg-5d1ad0c10a4410632bde0f478b397305.png' id='hidden-sections'>
+<div class='inner skinny'>
+<div class='container center'>
+<div class='page about'>
+<div class='clearfix'>
+<div class='twelve columns offset-two'>
+<h3>About Strikingly</h3>
+<br>
+<p>Strikingly brings beautiful mobile websites to everyone.</p>
+<p>What's so special about a Strikingly site? Simplicity, clarity, and accessibility. The mobile age is upon us, and having a mobile-optimized website is more important than ever. Don't lose your visitors under the weight of a heavy, confusing website. The same goes for editing: don't stress out about micromanaging your page, and don't waste time wondering where to change something. Edit it all on one page, and get it done fast.</p>
+<br>
+<br>
+<br>
+<h3>FAQ</h3>
+<br>
+</div>
+<div class='six columns offset-two faq'>
+<div class='faq-item'>
+<h2>Why is Strikingly the best website builder for the mobile age?</h2>
+<p>The Mobile Age is upon us! Your websites need to be viewable on phones and tablets, as well as desktops. All Strikingly sites are mobile-optimized, so your work will look great on any device, automatically. No need for a separate mobile version. No extra effort. Simple.</p>
+</div>
+<div class='faq-item'>
+<h2>I don't know how to build a website. Do I need my own server or hosting?</h2>
+<p>Nope. We have you covered with our enterprise-level high performace hosting. Build a website through our editor, click &quot;Publish,&quot; and it goes live immediately.</p>
+</div>
+<div class='faq-item'>
+<h3 class='faq-heading'>How much does it cost to build a website?</h3>
+<p>
+Making your own website is totally free! You can upgrade to a premium plan to use your own domain name, remove Strikingly branding, and lots more.
+<a href="/s/pricing">View pricing plans.</a>
+</p>
+</div>
+</div>
+<div class='six columns faq'>
+<div class='faq-item'>
+<h3 class='faq-heading'>Can I cancel at any time?</h3>
+<p>All paid plans come with a 14-day free trial. You can cancel anytime and billing will stop after your current billing cycle.</p>
+</div>
+<div class='faq-item'>
+<h2>Can you help me make my website?</h2>
+<p>Give us a try! It's easy to get started yourself. If you specific technical support, we're available. (If you want an online resume, we can <a href='/online-resume/linkedin'>jump start the process</a> for you.)</p>
+</div>
+<div class='faq-item'>
+<h3 class='faq-heading'>Can I use my own domain name?</h3>
+<p>Yup, but this is only available to paid users (any paid plan). After upgrading, you'll be able to hook up a domain you already own, or purchase a brand new domain right from our interface.</p>
+</div>
+<div class='faq-item'>
+<h3 class='faq-heading'>I need help! Where do I go?</h3>
+<p>Take a look at our <a href='/s/support'>support center</a> for instant answers, or send us a message at support@strikingly.com.</p>
+</div>
+</div>
+<div class='twelve columns offset-two faq'>
+<br>
+<br>
+<h2 class='faq-heading'>
+Still wondering how to make your own website?
+<a class='text faq-signup-button' href='javascript:void(0)'>
+Register NOW!
+</a>
+</h2>
+</div>
+</div>
+<div class='spacer'></div>
+<!-- .clearfix -->
+<!-- .twelve.columns.offset-two -->
+<!-- %h2=_("The Team") -->
+<!-- .spacer.smaller -->
+<!-- .clearfix -->
+<!-- .four.columns.offset-two -->
+<!-- = image_tag 'landing2/blank.png', :class => 'circle lazy', "data-original" => asset_path("landing2/david.png"), :alt=>_('David'), :style=>'height:189px' -->
+<!-- %br -->
+<!-- %h6=raw _("David Chen &ndash; Biz") -->
+<!-- .four.columns -->
+<!-- = image_tag 'landing2/blank.png', :class => 'circle lazy', "data-original" => asset_path("landing2/dafeng.png"), :alt=>_('Dafeng'), :style=>'height:189px' -->
+<!-- %br -->
+<!-- %h6=raw _("Dafeng Guo &ndash; Tech") -->
+<!-- .four.columns -->
+<!-- = image_tag 'landing2/blank.png', :class => 'circle lazy', "data-original" => asset_path("landing2/teng.png"), :alt=>_('Teng'), :style=>'height:189px' -->
+<!-- %br -->
+<!-- %h6=raw _("Teng Bao &ndash; Design") -->
+</div>
+<div class='page contact'>
+<div class='clearfix'>
+<div class='four columns'>
+<h4>Support</h4>
+<p>For help with using Strikingly, please email support@strikingly.com.</p>
+<div class='spacer small'></div>
+</div>
+<div class='four columns'>
+<h4>Press</h4>
+<p>For press inquiries, please email press@strikingly.com.</p>
+<div class='spacer small'></div>
+</div>
+<div class='four columns'>
+<h4>General</h4>
+<p>For general inquiries, please email info@strikingly.com.</p>
+<div class='spacer small'></div>
+</div>
+<div class='four columns'>
+<h4>Social Media</h4>
+<p>
+You can also reach out to us on <a href='http://facebook.com/strikingly' target='_blank'>Facebook</a> or <a href='http://twitter.com/Strikingly' target='_blank'>Twitter</a>.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div style='clear:both;'></div>
+</div>
+</div>
+</div>
+<script async="async" defer="defer" src="//assets.strikingly.com/assets/landing-d7eab69031713a5640624eadfce5d19c.js" type="text/javascript"></script>
+<script src="//cdn.optimizely.com/js/123895757.js" type="text/javascript"></script>
+<script async="async" defer="defer" src="//system.picreel.com/js/tracker.js" type="text/javascript"></script>
+<div id='fb-root'></div>
+</body>
+</html>
